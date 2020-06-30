@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.11.2">
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 4/src/main/java/edu/neu/ccs/cs5004/problem1/IUpp.java">
+<error line="59" severity="warning" message="Line continuation have incorrect indentation level, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagContinuationIndentationCheck"/>
+<error line="89" severity="warning" message="Line continuation have incorrect indentation level, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagContinuationIndentationCheck"/>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 4/src/main/java/edu/neu/ccs/cs5004/problem1/NonEmptyUpp.java">
+<error line="94" severity="warning" message="Line continuation have incorrect indentation level, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagContinuationIndentationCheck"/>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 4/src/main/java/edu/neu/ccs/cs5004/problem1/AbstractUpp.java">
+<error line="55" severity="warning" message="Line continuation have incorrect indentation level, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagContinuationIndentationCheck"/>
+<error line="87" severity="warning" message="Line continuation have incorrect indentation level, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagContinuationIndentationCheck"/>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 4/src/main/java/edu/neu/ccs/cs5004/problem1/EmptyUpp.java">
+<error line="54" severity="warning" message="Line continuation have incorrect indentation level, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagContinuationIndentationCheck"/>
+<error line="81" severity="warning" message="Line continuation have incorrect indentation level, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagContinuationIndentationCheck"/>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 4/src/main/java/edu/neu/ccs/cs5004/problem1/exceptions/PairEmptyException.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 4/src/main/java/edu/neu/ccs/cs5004/problem1/exceptions/InvalidUsernameException.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 4/src/main/java/edu/neu/ccs/cs5004/problem1/exceptions/PairAlreadyInitializedException.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 4/src/main/java/edu/neu/ccs/cs5004/problem2/Node.java">
+<error line="26" severity="warning" message="Line continuation have incorrect indentation level, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagContinuationIndentationCheck"/>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 4/src/main/java/edu/neu/ccs/cs5004/problem2/Polynomial.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 4/src/main/java/edu/neu/ccs/cs5004/problem2/IPolynomial.java">
+</file>
+</checkstyle>

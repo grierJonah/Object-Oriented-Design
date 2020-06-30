@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>substituteTeacher.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CS5004 Assignment</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.problem1.substitute</a> &gt; <span class="el_source">substituteTeacher.java</span></div><h1>substituteTeacher.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.problem1.substitute;
+
+import edu.neu.ccs.cs5004.problem1.Name;
+import java.util.Objects;
+
+/**
+ * A class representing a Substitute Teacher. A Substitute Teacher has all the same parameters of
+ * any other teacher with the addition of having a counting ability to keep track of the amount of
+ * days they have worked in a given classroom.
+ */
+public class substituteTeacher extends abstractSubstituteTeacher {
+
+  protected Integer numberOfDaysInAGivenClassroom;
+
+  /**
+   * Constructs a new Substitute Teacher with the given parameters.
+   *
+   * @param name the name of the Substitute Teacher
+   * @param classroom the name of the classroom
+   * @param coteacher the name of the Co Teacher
+   * @param vacationStatus the vacation status of the Substitute Teacher, represented as a Boolean
+   * @param numberOfDaysInAGivenClassroom the number of days a Substitute Teacher has worked in a
+   * given classroom
+   */
+  public substituteTeacher(Name name, String classroom,
+      Name coteacher, Integer numberOfDaysInAGivenClassroom, Boolean vacationStatus) {
+<span class="fc" id="L27">    super(name, classroom, coteacher, numberOfDaysInAGivenClassroom, vacationStatus);</span>
+<span class="fc" id="L28">    this.numberOfDaysInAGivenClassroom = numberOfDaysInAGivenClassroom;</span>
+<span class="fc" id="L29">  }</span>
+
+  @Override
+  public boolean equals(Object o) {
+<span class="pc bpc" id="L33" title="1 of 2 branches missed.">    if (this == o) {</span>
+<span class="nc" id="L34">      return true;</span>
+    }
+<span class="pc bpc" id="L36" title="2 of 4 branches missed.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L37">      return false;</span>
+    }
+<span class="fc" id="L39">    substituteTeacher that = (substituteTeacher) o;</span>
+<span class="fc" id="L40">    return Objects</span>
+<span class="fc" id="L41">        .equals(numberOfDaysInAGivenClassroom, that.numberOfDaysInAGivenClassroom);</span>
+  }
+
+  @Override
+  public int hashCode() {
+<span class="fc" id="L46">    return Objects.hash(numberOfDaysInAGivenClassroom);</span>
+  }
+
+  @Override
+  public String toString() {
+<span class="fc" id="L51">    return &quot;substituteTeacher{&quot; +</span>
+        &quot;, name=&quot; + name +
+        &quot;, classroom='&quot; + classroom + '\'' +
+        &quot;, coteacher=&quot; + coteacher +
+        &quot;, vacationStatus=&quot; + vacationStatus +
+        &quot;, numberOfDaysInGivenClassroom=&quot; + numberOfDaysInGivenClassroom +
+        '}';
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

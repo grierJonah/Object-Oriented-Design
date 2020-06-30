@@ -1,0 +1,10 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+CS5004 Assignment,edu.neu.ccs.cs5004.problem2,RunnersIterator.new Iterator() {...},4,59,2,2,2,5,2,3,0,3
+CS5004 Assignment,edu.neu.ccs.cs5004.problem2,RunnersIterator,39,15,6,0,9,5,4,2,1,2
+CS5004 Assignment,edu.neu.ccs.cs5004.problem1,Runner,0,94,0,2,0,23,0,10,0,9
+CS5004 Assignment,edu.neu.ccs.cs5004.problem3,Node,12,15,0,0,5,7,1,2,1,2
+CS5004 Assignment,edu.neu.ccs.cs5004.problem3,BinaryTree,27,52,4,6,3,11,4,3,0,2
+CS5004 Assignment,edu.neu.ccs.cs5004.problem3,PreOrder,64,0,12,0,16,0,9,0,3,0
+CS5004 Assignment,edu.neu.ccs.cs5004.problem3,InOrder,16,0,0,0,5,0,2,0,2,0
+CS5004 Assignment,edu.neu.ccs.cs5004.problem3,PostOrder,63,14,12,0,14,5,8,1,2,1
+CS5004 Assignment,edu.neu.ccs.cs5004.problem3,InOrder.new Iterator() {...},63,0,6,0,9,0,6,0,3,0

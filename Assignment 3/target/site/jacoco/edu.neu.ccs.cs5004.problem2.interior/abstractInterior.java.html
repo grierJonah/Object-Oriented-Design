@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>abstractInterior.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CS5004 Assignment</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.problem2.interior</a> &gt; <span class="el_source">abstractInterior.java</span></div><h1>abstractInterior.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.problem2.interior;
+
+import edu.neu.ccs.cs5004.problem2.PropertySizeEnum;
+import edu.neu.ccs.cs5004.problem2.service.abstractService;
+
+/**
+ * An abstract class for interior service.
+ */
+public abstract class abstractInterior extends abstractService {
+
+<span class="fc" id="L11">  private static final Integer TWO_HOURS = 2;</span>
+<span class="fc" id="L12">  private static final Integer FOUR_HOURS = 4;</span>
+<span class="fc" id="L13">  private static final Integer TWO_DAYS = 16;</span>
+<span class="fc" id="L14">  private static final Integer THREE_DAYS = 24;</span>
+<span class="fc" id="L15">  private static final Double FIVE_PERCENT = 0.05;</span>
+<span class="fc" id="L16">  private static final Double SEVEN_PERCENT = 0.07;</span>
+<span class="fc" id="L17">  private static final Double NO_COST = 0.0;</span>
+
+  private Integer numberOfPets;
+  protected Double finalPrice;
+
+<span class="fc" id="L22">  protected PropertySizeEnum small = PropertySizeEnum.SMALL;</span>
+<span class="fc" id="L23">  protected PropertySizeEnum medium = PropertySizeEnum.MEDIUM;</span>
+
+
+  /**
+   * Constructs a new abstractInterior with the given parameters.
+   *
+   * @param invoiceID the invoiceID of the interior service
+   * @param propertyAddress the property address of the interior service
+   * @param propertySize the property size of the interior service, represented as an Enum
+   * @param scheduledMonthly a Boolean value checking if the service is monthly or a 1 time service
+   * @param numberOfServices the number of services the property has had, represented as an Integer
+   */
+  public abstractInterior(String invoiceID, String propertyAddress, PropertySizeEnum propertySize,
+      Boolean scheduledMonthly, Integer numberOfServices, Integer numberOfPets) {
+<span class="fc" id="L37">    super(invoiceID, propertyAddress, propertySize, scheduledMonthly, numberOfServices);</span>
+<span class="fc" id="L38">    this.numberOfPets = numberOfPets;</span>
+<span class="fc" id="L39">  }</span>
+
+  /**
+   * Gets the number of pets a property has.
+   *
+   * @return the number of pets a property has.
+   */
+  public Integer getNumberOfPets() {
+<span class="fc" id="L47">    return this.numberOfPets;</span>
+  }
+
+  /**
+   * Sets the number of pets a property has.
+   *
+   * @param numberOfPets the number of pets a property has.
+   */
+  public void setNumberOfPets(Integer numberOfPets) {
+<span class="fc" id="L56">    this.numberOfPets = numberOfPets;</span>
+<span class="fc" id="L57">  }</span>
+
+
+  /*@Override
+  public Double calculatePrice() throws TooManyFloorsException {
+    Double InteriorCleaningPrice = calculateInteriorCleaningPrice();
+    Double petFee = calculatePetPrice();
+    Double discountPrice = calculateDiscountHelper();
+    Double withoutDiscountPrice = InteriorCleaningPrice + (InteriorCleaningPrice * petFee);
+    return finalPrice = withoutDiscountPrice - (withoutDiscountPrice * discountPrice);
+  } */
+
+  /**
+   * Depending on attributes assigned to creating a new cleaning service, this method will help give
+   * accurate prices with the size of the property. There is a base rate for each hour of cleaning
+   * to be $80. A SMALL property takes exactly 1 hour, so there property cleaning fee is $80.00. If
+   * it is a medium house it takes 2 hours, so the property cleaning fee will be $160.00. If the
+   * property is a LARGE property, then it will take roughly 4 hours to complete. For a large
+   * property the cost will be $320.00.
+   *
+   * @return the rate that the property owner will pay based on the size of the property
+   */
+  public Double calculateInteriorCleaningPrice() {
+<span class="fc bfc" id="L80" title="All 2 branches covered.">    if (this.propertySize == small) {</span>
+<span class="fc" id="L81">      return BASE_RATE;</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">    } else if (this.propertySize == medium) {</span>
+<span class="fc" id="L83">      return (BASE_RATE * TWO_HOURS);</span>
+    } else {
+<span class="fc" id="L85">      return (BASE_RATE * FOUR_HOURS);</span>
+    }
+  }
+
+  /**
+   * Depending on attributes assigned to creating a new painting service, this method will help
+   * provide accurate prices with the size of the property. There is a base rate per hour of
+   * painting at $80.0. Additionally, painters calculate hours worked in terms of days. One day is
+   * equal to eight hours of working. For SMALL property's painting takes two days to complete. That
+   * means that a property owner will expect to pay for 16 hours of work. Like SMALL property's,
+   * MEDIUM sized property's also take two days to complete. Purchasers will be expected to also pay
+   * for 16 hours of work. For LARGE property's it takes three days to complete. This means
+   * purchasers will be expected to pay for 24 hours worth of work.
+   *
+   * @return the rate that the property owner will pay based on the size of the property
+   */
+  public Double calculateInteriorPaintingPrice() {
+<span class="fc bfc" id="L102" title="All 2 branches covered.">    if (this.propertySize == small) {</span>
+<span class="fc" id="L103">      return (BASE_RATE * TWO_DAYS);</span>
+<span class="fc bfc" id="L104" title="All 2 branches covered.">    } else if (this.propertySize == medium) {</span>
+<span class="fc" id="L105">      return (BASE_RATE * TWO_DAYS);</span>
+    } else {
+<span class="fc" id="L107">      return (BASE_RATE * THREE_DAYS);</span>
+    }
+  }
+
+  /**
+   * Depending on attributes assigned to creating a new cleaning or painting service. This method
+   * will help provide accurate prices if the property has any pets. There is a 5% increase in final
+   * price if the property owner has 1 or 2 pets. There is a 7% increase in final price if the
+   * property owner has 3 or more pets.
+   *
+   * @return the percentage increase that the property owner will be required to pay if they have
+   * any pets.
+   */
+  public Double calculatePetPrice() {
+<span class="pc bpc" id="L121" title="1 of 4 branches missed.">    if (numberOfPets &gt;= 1 &amp;&amp; numberOfPets &lt;= 2) {</span>
+<span class="fc" id="L122">      return FIVE_PERCENT;</span>
+<span class="pc bpc" id="L123" title="1 of 2 branches missed.">    } else if (numberOfPets &gt;= 3) {</span>
+<span class="fc" id="L124">      return SEVEN_PERCENT;</span>
+    } else {
+<span class="nc" id="L126">      return NO_COST;</span>
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

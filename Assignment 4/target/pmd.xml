@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="5.3.5" timestamp="2019-07-02T15:01:34.076">
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 4/src/main/java/edu/neu/ccs/cs5004/problem1/NonEmptyUpp.java">
+<violation beginline="14" endline="14" begincolumn="11" endcolumn="34" rule="AvoidFieldNameMatchingTypeName" ruleset="Naming" package="edu.neu.ccs.cs5004.problem1" class="NonEmptyUpp" variable="nonEmptyUpp" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#AvoidFieldNameMatchingTypeName" priority="3">
+It is somewhat confusing to have a field name matching the declaring class name
+</violation>
+<violation beginline="15" endline="15" begincolumn="20" endcolumn="30" rule="UnusedPrivateField" ruleset="Unused Code" package="edu.neu.ccs.cs5004.problem1" class="NonEmptyUpp" variable="newEmptyUpp" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'newEmptyUpp'.
+</violation>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 4/src/main/java/edu/neu/ccs/cs5004/problem2/Polynomial.java">
+<violation beginline="177" endline="177" begincolumn="18" endcolumn="23" rule="UnusedLocalVariable" ruleset="Unused Code" package="edu.neu.ccs.cs5004.problem2" class="Polynomial" method="add" variable="result" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'result'.
+</violation>
+</file>
+</pmd>

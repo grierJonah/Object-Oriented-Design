@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Polynomial.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CS5004 Assignment</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.problem2</a> &gt; <span class="el_source">Polynomial.java</span></div><h1>Polynomial.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.problem2;
+
+import java.util.Objects;
+
+/**
+ * A Polynomial class that implements all the functionality.
+ */
+public class Polynomial implements IPolynomial {
+
+  Node node;
+  Double[] coefficients;
+  Integer degree;
+
+  /**
+   * Immediately creates a polynomial consisting of nothing. Allows for the other methods to be
+   * added and stacked on top of this one. Our first node will be set to null to indicate that it
+   * stores no value. Additionally, it's next is set to null through our Node class.
+   */
+<span class="fc" id="L19">  public Polynomial() {</span>
+<span class="fc" id="L20">    this.node = null;</span>
+<span class="fc" id="L21">    coefficients = new Double[0];</span>
+<span class="fc" id="L22">  }</span>
+
+  /**
+   * Constructs a polynomial with the given parameters. Creates a new node with the given parameters
+   * and adds it to the expression.
+   *
+   * @param coefficient the coefficient of the equation (5x -- (5) is the coefficient)
+   * @param power the power of the equation (5x^2 -- (2) is the power)
+   */
+<span class="nc" id="L31">  public Polynomial(Integer coefficient, Integer power) {</span>
+<span class="nc" id="L32">    this.node = new Node(coefficient, power, null);</span>
+<span class="nc" id="L33">    coefficients = new Double[power + 1];</span>
+<span class="nc" id="L34">    degree = power;</span>
+<span class="nc" id="L35">  }</span>
+
+  /**
+   * AddTerm method allows the user to add a coefficient and power to a given polynomial. First
+   * addTerm checks if the polynomial is empty, if it is, it creates a new Polynomial node with the
+   * given parameters. If the polynomial is not null the while loop goes through each term checking
+   * if its 'next' is null. Once it determines the the next is null it breaks out of the loop and
+   * creates a new node with the given parameters in that spot and sets its' next to null.
+   *
+   * @param coefficient the coefficient to be added to the polynomial
+   * @param power the power the coefficient will be raised to.
+   */
+  @Override
+  public void addTerm(Integer coefficient, Integer power) {
+<span class="pc bpc" id="L49" title="1 of 2 branches missed.">    if (isEmpty()) {</span>
+<span class="fc" id="L50">      this.node = new Node(coefficient, power, null);</span>
+    } else {
+<span class="nc" id="L52">      Node current = this.node;</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">      while (current != null) {</span>
+<span class="nc" id="L54">        current = current.getNext();</span>
+      }
+
+<span class="nc" id="L57">      current.setNext(new Node(coefficient, power, null));</span>
+    }
+<span class="fc" id="L59">  }</span>
+
+  /**
+   * removeTerm method gives the user the ability to remove any, and all coefficients with that
+   * specific power.
+   */
+  @Override
+  public void removeTerm(Integer power) {
+<span class="nc" id="L67">    Node current = this.node;</span>
+<span class="nc bnc" id="L68" title="All 2 branches missed.">    while (current != null) {</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">      if (current.getPower().equals(power)) {</span>
+<span class="nc" id="L70">        current = current.getNext();</span>
+      }
+    }
+<span class="nc" id="L73">  }</span>
+
+  /**
+   * Gets the highest degree of the polynomial by checking each nodes power.
+   *
+   * @return the highest degree of the polynomial, represented as an Integer.
+   */
+  @Override
+  public Integer getDegree() {
+<span class="fc" id="L82">    Integer highestPower = 0;</span>
+    Integer checkPower;
+<span class="pc bpc" id="L84" title="1 of 2 branches missed.">    if (isEmpty()) {</span>
+<span class="nc" id="L85">      highestPower = 0;</span>
+    } else {
+<span class="fc" id="L87">      Node current = this.node;</span>
+<span class="fc bfc" id="L88" title="All 2 branches covered.">      while (current != null) {</span>
+<span class="fc" id="L89">        checkPower = current.getPower();</span>
+<span class="pc bpc" id="L90" title="1 of 2 branches missed.">        if (highestPower &lt; checkPower) {</span>
+<span class="fc" id="L91">          highestPower = checkPower;</span>
+        }
+<span class="fc" id="L93">        current = current.getNext();</span>
+      }
+    }
+<span class="fc" id="L96">    return highestPower;</span>
+  }
+
+  /**
+   * Gets the coefficient that has the specific power Integer attached to it.
+   *
+   * @param power the degree that a coefficient is raised to
+   * @return a coefficient
+   */
+  @Override
+  public Integer getCoefficient(Integer power) {
+<span class="pc bpc" id="L107" title="1 of 2 branches missed.">    if (isEmpty()) {</span>
+<span class="nc" id="L108">      return 0;</span>
+    } else {
+<span class="fc" id="L110">      Node current = this.node;</span>
+<span class="pc bpc" id="L111" title="1 of 2 branches missed.">      while (current != null) {</span>
+<span class="pc bpc" id="L112" title="1 of 2 branches missed.">        if (current.getPower().equals(power)) {</span>
+<span class="fc" id="L113">          return current.getCoefficient();</span>
+        } else {
+<span class="nc" id="L115">          current = current.getNext();</span>
+        }
+      }
+    }
+<span class="nc" id="L119">    return 0;</span>
+  }
+
+  /**
+   * Takes another polynomial object and returns true to check if they are the same. Two polynomials
+   * are the same if they contain the same terms.
+   *
+   * @param obj a polynomial
+   * @return true or false
+   */
+  @Override
+  public Boolean isSame(IPolynomial obj) {
+<span class="nc bnc" id="L131" title="All 2 branches missed.">    if (this == obj) {</span>
+<span class="nc" id="L132">      return true;</span>
+    }
+<span class="nc bnc" id="L134" title="All 4 branches missed.">    if (obj == null || getClass() != obj.getClass()) {</span>
+<span class="nc" id="L135">      return false;</span>
+    }
+<span class="nc" id="L137">    Polynomial that = (Polynomial) obj;</span>
+<span class="nc" id="L138">    return Objects.equals(node, that.node);</span>
+  }
+
+  /**
+   * Method checks to see if the polynomial expression is empty. If it is, then the node inside will
+   * be null (true). Otherwise, the node will contain a node not equal to null and be evaluated as
+   * false.
+   */
+  @Override
+  public Boolean isEmpty() {
+<span class="fc bfc" id="L148" title="All 2 branches covered.">    return this.node == null;</span>
+  }
+
+  /**
+   * Method evaluates the polynomial by interchanging the variables with the inputted Double.
+   *
+   * @param number the number to interchange the variables with.
+   * @return the result of the polynomial, when using the specific number
+   */
+  @Override
+  public Double evaluate(Double number) {
+<span class="nc" id="L159">    Double result = 0.0;</span>
+<span class="nc bnc" id="L160" title="All 2 branches missed.">    for (int i = 0; i &lt; degree + 1; i++) {</span>
+<span class="nc" id="L161">      result = result + (coefficients[i] * Math.pow(number, i));</span>
+    }
+<span class="nc" id="L163">    return result;</span>
+  }
+
+  /**
+   * A method that takes another polynomial and adds it to the original.
+   *
+   * @param object a polynomial expression
+   * @return a new polynomial
+   */
+  @Override
+  public IPolynomial add(IPolynomial object) {
+<span class="nc bnc" id="L174" title="All 2 branches missed.">    if (object.isEmpty()) {</span>
+<span class="nc" id="L175">      return object;</span>
+    } else {
+      Polynomial result;
+<span class="nc bnc" id="L178" title="All 2 branches missed.">      for (int i = 0; i &lt; degree + 1; i++) {</span>
+<span class="nc bnc" id="L179" title="All 2 branches missed.">        for (int j = 0; j &lt; i; j++) {</span>
+<span class="nc" id="L180">          Node current = this.node;</span>
+<span class="nc bnc" id="L181" title="All 2 branches missed.">          if (current.getCoefficient().equals(object.getCoefficient(current.getPower()))) {</span>
+<span class="nc" id="L182">            return null;</span>
+          }
+        }
+      }
+    }
+<span class="nc" id="L187">    return null;</span>
+  }
+
+  /**
+   * A method that takes another polynomial and multiplies it to the original.
+   *
+   * @param object a polynomial expression
+   * @return a new polynomial
+   */
+  @Override
+  public IPolynomial multiply(IPolynomial object) {
+<span class="nc" id="L198">    return null;</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

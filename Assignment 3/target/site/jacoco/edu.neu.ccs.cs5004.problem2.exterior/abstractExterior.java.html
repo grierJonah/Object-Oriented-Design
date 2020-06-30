@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>abstractExterior.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CS5004 Assignment</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.problem2.exterior</a> &gt; <span class="el_source">abstractExterior.java</span></div><h1>abstractExterior.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.problem2.exterior;
+
+import edu.neu.ccs.cs5004.problem2.exceptions.TooManyFloorsException;
+import edu.neu.ccs.cs5004.problem2.PropertySizeEnum;
+import edu.neu.ccs.cs5004.problem2.service.abstractService;
+
+/**
+ * An abstract class for Exterior services.
+ */
+public abstract class abstractExterior extends abstractService {
+
+<span class="fc" id="L12">  public static final Integer TWO_HOURS = 2;</span>
+<span class="fc" id="L13">  public static final Integer FOUR_HOURS = 4;</span>
+<span class="fc" id="L14">  public static final Double FIVE_PERCENT = 0.05;</span>
+<span class="fc" id="L15">  public static final Double NO_COST = 0.0;</span>
+
+  protected Integer numberOfFloors;
+  protected Integer month;
+<span class="fc" id="L19">  protected PropertySizeEnum small = PropertySizeEnum.SMALL;</span>
+<span class="fc" id="L20">  protected PropertySizeEnum medium = PropertySizeEnum.MEDIUM;</span>
+
+  private Double exteriorPrice;
+  protected Double finalPrice;
+
+
+  /**
+   * Constructs a new abstractExterior with the given parameters.
+   *
+   * @param invoiceID the invoiceID of the exterior service
+   * @param propertyAddress the property address of the exterior service
+   * @param propertySize the property size of the exterior service, represented as an Enum
+   * @param scheduledMonthly a Boolean value checking if the service is monthly or a 1 time service
+   * @param numberOfServices the number of services the property has had, represented as an Integer
+   */
+  public abstractExterior(String invoiceID, String propertyAddress, PropertySizeEnum propertySize,
+      Boolean scheduledMonthly, Integer numberOfServices, Integer numberOfFloors, Integer month) {
+<span class="fc" id="L37">    super(invoiceID, propertyAddress, propertySize, scheduledMonthly, numberOfServices);</span>
+<span class="fc" id="L38">    this.numberOfFloors = numberOfFloors;</span>
+<span class="fc" id="L39">    this.month = month;</span>
+<span class="fc" id="L40">  }</span>
+
+  /**
+   * Gets the number of floors a property has.
+   *
+   * @return the number of floors a property has.
+   */
+  public Integer getNumberOfFloors() {
+<span class="fc" id="L48">    return numberOfFloors;</span>
+  }
+
+  /**
+   * Sets the number of floors a property has.
+   *
+   * @param numberOfFloors the number of floors a property has.
+   */
+  public void setNumberOfFloors(Integer numberOfFloors) {
+<span class="fc" id="L57">    this.numberOfFloors = numberOfFloors;</span>
+<span class="fc" id="L58">  }</span>
+
+  /**
+   * Gets the month of the scheduled exterior cleaning.
+   *
+   * @return the month, represented as an Integer.
+   */
+  public Integer getMonth() {
+<span class="fc" id="L66">    return month;</span>
+  }
+
+  /**
+   * Sets the month that the exterior cleaning will happen.
+   *
+   * @param month the month that the scheduled servicing will happen, represented as an Integer.
+   */
+  public void setMonth(Integer month) {
+<span class="fc" id="L75">    this.month = month;</span>
+<span class="fc" id="L76">  }</span>
+
+
+  @Override
+  public Double calculatePrice() throws TooManyFloorsException {
+<span class="fc" id="L81">    Double withoutDiscountPrice = calculateExteriorServicingPrice();</span>
+<span class="fc" id="L82">    Double discountPrice = calculateDiscountHelper();</span>
+<span class="fc" id="L83">    return finalPrice = withoutDiscountPrice - (withoutDiscountPrice * discountPrice);</span>
+  }
+
+  /**
+   * Depending on attributes assigned to creating a new exterior service, this method will help give
+   * accurate prices with the size of the property. There is a base rate for each hour of exterior
+   * work to be $80. A SMALL property takes exactly 2 hours, so there property gardening fee is
+   * $160.00. If it is a medium house it also takes 2 hours, so the property cleaning fee will be
+   * $160.00. If the property is a LARGE property, then it will take roughly 4 hours to complete.
+   * For a large property the cost will be $320.00.
+   *
+   * @return the dollar rate that the property owner will pay based on the size of the property.
+   */
+
+  protected Double calculateExteriorServicingPrice() {
+<span class="fc bfc" id="L98" title="All 2 branches covered.">    if (this.propertySize == small) {</span>
+<span class="fc" id="L99">      return (BASE_RATE * TWO_HOURS);</span>
+<span class="fc bfc" id="L100" title="All 2 branches covered.">    } else if (propertySize == medium) {</span>
+<span class="fc" id="L101">      return (BASE_RATE * TWO_HOURS);</span>
+    } else {
+<span class="fc" id="L103">      return (BASE_RATE * FOUR_HOURS);</span>
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

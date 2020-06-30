@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Runner.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CS5004 Assignment</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.problem1</a> &gt; <span class="el_source">Runner.java</span></div><h1>Runner.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.problem1;
+
+import java.util.List;
+
+/**
+ * A Runner class.
+ */
+public class Runner implements Comparable&lt;Runner&gt; {
+
+  private String name;
+  private List&lt;Double&gt; fiveKRaceTimes;
+  private List&lt;Double&gt; tenKRaceTimes;
+  private List&lt;Double&gt; halfMarathonTimes;
+
+  /**
+   * Constructs a new Runner given the parameters.
+   *
+   * @param name the name of the runner
+   * @param fiveKRaceTimes the runners 5k race times
+   * @param tenKRaceTimes the runners 10k race times
+   * @param halfMarathonTimes the runners half marathon race times
+   */
+  public Runner(String name, List&lt;Double&gt; fiveKRaceTimes,
+      List&lt;Double&gt; tenKRaceTimes,
+<span class="fc" id="L25">      List&lt;Double&gt; halfMarathonTimes) {</span>
+<span class="fc" id="L26">    this.name = name;</span>
+<span class="fc" id="L27">    this.fiveKRaceTimes = fiveKRaceTimes;</span>
+<span class="fc" id="L28">    this.tenKRaceTimes = tenKRaceTimes;</span>
+<span class="fc" id="L29">    this.halfMarathonTimes = halfMarathonTimes;</span>
+<span class="fc" id="L30">  }</span>
+
+  /**
+   * Gets the runners first name.
+   *
+   * @return the runners first name
+   */
+  public String getName() {
+<span class="fc" id="L38">    return name;</span>
+  }
+
+  /**
+   * Gets the list of 5k race times.
+   *
+   * @return a list of 5k race times
+   */
+  public List&lt;Double&gt; getFiveKRaceTimes() {
+<span class="fc" id="L47">    return fiveKRaceTimes;</span>
+  }
+
+  /**
+   * Gets the list of 10k race times.
+   *
+   * @return a list of 10k race times
+   */
+  public List&lt;Double&gt; getTenKRaceTimes() {
+<span class="fc" id="L56">    return tenKRaceTimes;</span>
+  }
+
+  /**
+   * Gets the list of half marathon times.
+   *
+   * @return a list of half marathon times
+   */
+  public List&lt;Double&gt; getHalfMarathonTimes() {
+<span class="fc" id="L65">    return halfMarathonTimes;</span>
+  }
+
+  /**
+   * Compares the 'otherRunner' object against another runner to see who is faster.
+   * 0  - the two runners are equal
+   * 1  - the original runner is faster (originalRunner greater than otherRunner)
+   * -1 - the original runner is slower (originalRunner less than otherRunner)
+   *
+   * @param otherRunner the other runner to compare times against
+   * @return an int dictating who is faster
+   */
+  @Override
+  public int compareTo(Runner otherRunner) {
+<span class="fc" id="L79">    Double originalTotalRunnerTime = sumRaceTimes(this);</span>
+<span class="fc" id="L80">    Double otherTotalRunnerTime = sumRaceTimes(otherRunner);</span>
+
+<span class="fc" id="L82">    Double avgOriginalRunnerTime = getAverageRaceTime(originalTotalRunnerTime, this);</span>
+<span class="fc" id="L83">    Double avgOtherRunnerTime = getAverageRaceTime(otherTotalRunnerTime, otherRunner);</span>
+
+<span class="fc" id="L85">    return avgOriginalRunnerTime.compareTo(avgOtherRunnerTime);</span>
+  }
+
+  /**
+   * Helper method sums the runners 5k race times and returns a Double.
+   *
+   * @param runner the runner
+   * @return the runners summed time running each 5k
+   */
+  private Double sumRaceTimes(Runner runner) {
+<span class="fc" id="L95">    Double raceTimes = 0.0;</span>
+<span class="fc" id="L96">    Integer numRacesRun = num5KRacesRun(runner);</span>
+
+<span class="fc bfc" id="L98" title="All 2 branches covered.">    for (int i = 0; i &lt; numRacesRun; i++) {</span>
+<span class="fc" id="L99">      raceTimes += runner.fiveKRaceTimes.get(i);</span>
+    }
+<span class="fc" id="L101">    return raceTimes;</span>
+  }
+
+  /**
+   * Helper method to get the number of 5k races a runner has run.
+   *
+   * @param runner the runner
+   * @return an Integer associated with how many race times they have done
+   */
+  private Integer num5KRacesRun(Runner runner) {
+<span class="fc" id="L111">    return runner.getFiveKRaceTimes().size();</span>
+  }
+
+  private Double getAverageRaceTime(Double time, Runner runner) {
+<span class="fc" id="L115">    Double newTime = time / runner.num5KRacesRun(runner);</span>
+<span class="fc" id="L116">    return newTime;</span>
+  }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

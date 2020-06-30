@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.11.2">
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 5/src/main/java/edu/neu/ccs/cs5004/problem1/IList.java">
+<error line="21" column="27" severity="warning" message="Parameter name &apos;o&apos; must match pattern &apos;^[a-z][a-z0-9][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="31" column="17" severity="warning" message="Parameter name &apos;e&apos; must match pattern &apos;^[a-z][a-z0-9][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="37" column="25" severity="warning" message="Parameter name &apos;o&apos; must match pattern &apos;^[a-z][a-z0-9][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="42" column="37" severity="warning" message="Parameter name &apos;c&apos; must match pattern &apos;^[a-z][a-z0-9][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="54" severity="warning" message="First sentence of Javadoc is incomplete (period is missing) or not present." source="com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"/>
+<error line="57" severity="warning" message="Overload methods should not be split. Previous overloaded method located at line &apos;31&apos;." source="com.puppycrawl.tools.checkstyle.checks.coding.OverloadMethodsDeclarationOrderCheck"/>
+<error line="59" severity="warning" message="First sentence of Javadoc is incomplete (period is missing) or not present." source="com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"/>
+<error line="62" severity="warning" message="Overload methods should not be split. Previous overloaded method located at line &apos;37&apos;." source="com.puppycrawl.tools.checkstyle.checks.coding.OverloadMethodsDeclarationOrderCheck"/>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 5/src/main/java/edu/neu/ccs/cs5004/problem1/Runner.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 5/src/main/java/edu/neu/ccs/cs5004/problem2/RunnersIterator.java">
+<error line="4" severity="warning" message="&apos;java.util.*&apos; should be separated from previous import group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="4" severity="warning" message="Using the &apos;.*&apos; form of import should be avoided - java.util.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 5/src/main/java/edu/neu/ccs/cs5004/problem3/Node.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 5/src/main/java/edu/neu/ccs/cs5004/problem3/InOrder.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 5/src/main/java/edu/neu/ccs/cs5004/problem3/BinaryTree.java">
+<error line="18" column="3" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 5/src/main/java/edu/neu/ccs/cs5004/problem3/PreOrder.java">
+<error line="14" column="3" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 5/src/main/java/edu/neu/ccs/cs5004/problem3/PostOrder.java">
+</file>
+</checkstyle>

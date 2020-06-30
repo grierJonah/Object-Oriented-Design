@@ -1,0 +1,1 @@
+I'm not entirely sure how to do either of these problems. The polynomial problem has gotten the best of me, and for the methods I was able to implement they are a combination of internet sources and trying to whiteboard out what I thought would work. 

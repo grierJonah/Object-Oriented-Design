@@ -1,0 +1,1 @@
+# Pushed up what I can try to piece together. I'm not really understanding how to implement iterators or when to use the interface iterable. Also, lacking understanding on how to test them.

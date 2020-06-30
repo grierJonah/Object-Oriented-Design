@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>preschoolTeacher xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../../apidocs/edu/neu/ccs/cs5004/problem1/preschool/preschoolTeacher.html">View Javadoc</a></div><pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <strong class="jxr_keyword">package</strong> edu.neu.ccs.cs5004.problem1.preschool;
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <strong class="jxr_keyword">import</strong> edu.neu.ccs.cs5004.problem1.Name;
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <strong class="jxr_keyword">import</strong> edu.neu.ccs.cs5004.problem1.abstractTeacher;
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <strong class="jxr_keyword">import</strong> java.util.Objects;
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   <em class="jxr_javadoccomment"> * A class representing a Preschool Teacher. A Preschool Teacher has all the same parameters of any</em>
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <em class="jxr_javadoccomment"> * other teacher with the addition of having a counting ability to keep track of children who can</em>
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <em class="jxr_javadoccomment"> * read.</em>
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../edu/neu/ccs/cs5004/problem1/preschool/preschoolTeacher.html">preschoolTeacher</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../../edu/neu/ccs/cs5004/problem1/abstractTeacher.html">abstractTeacher</a> {
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>  
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>    <strong class="jxr_keyword">protected</strong> Integer numberOfChildrenAbleToRead;
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>    <strong class="jxr_keyword">protected</strong> <a href="../../../../../../edu/neu/ccs/cs5004/problem1/preschool/preschoolTeacher.html">preschoolTeacher</a> newPreschoolTeacher;
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>    <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <em class="jxr_javadoccomment">   * Constructs a new Preschool Teacher with the given parameters.</em>
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  <em class="jxr_javadoccomment">   *</em>
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_javadoccomment">   * @param name the name of the Preschool Teacher</em>
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  <em class="jxr_javadoccomment">   * @param coteacher the name of the Co Teacher</em>
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  <em class="jxr_javadoccomment">   * @param classroom the classroom of the Preschool Teacher, represented as a String</em>
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <em class="jxr_javadoccomment">   * @param currentNumberOfChildren the current number of children in the classroom</em>
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <em class="jxr_javadoccomment">   * @param maximumNumberOfChildren the maximum number of children in the classroom</em>
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  <em class="jxr_javadoccomment">   * @param vacationStatus the vacation status of the teacher, represented as a Boolean</em>
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <em class="jxr_javadoccomment">   * @param numberOfChildrenAbleToRead the current number of children who can read</em>
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  <em class="jxr_javadoccomment">   */</em>
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>    <strong class="jxr_keyword">public</strong> <a href="../../../../../../edu/neu/ccs/cs5004/problem1/preschool/preschoolTeacher.html">preschoolTeacher</a>(<a href="../../../../../../edu/neu/ccs/cs5004/problem1/Name.html">Name</a> name, String classroom, <a href="../../../../../../edu/neu/ccs/cs5004/problem1/Name.html">Name</a> coteacher,
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>        Integer currentNumberOfChildren, Integer maximumNumberOfChildren, Boolean vacationStatus,
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>        Integer numberOfChildrenAbleToRead) {
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>      <strong class="jxr_keyword">super</strong>(name, classroom, coteacher, currentNumberOfChildren,
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>          maximumNumberOfChildren, vacationStatus);
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>      <strong class="jxr_keyword">this</strong>.numberOfChildrenAbleToRead = numberOfChildrenAbleToRead;
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>    }
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>  
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>    <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  <em class="jxr_javadoccomment">   * Gets the number of children in the classroom who are able to read.</em>
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>  <em class="jxr_javadoccomment">   *</em>
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>  <em class="jxr_javadoccomment">   * @return the number of children who can read</em>
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>  <em class="jxr_javadoccomment">   */</em>
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>    <strong class="jxr_keyword">public</strong> Integer getNumberOfChildrenAbleToRead() {
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>      <strong class="jxr_keyword">return</strong> numberOfChildrenAbleToRead;
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>    }
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>  
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>    <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>  <em class="jxr_javadoccomment">   * Sets the number of children in the classroom who are able to read.</em>
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>  <em class="jxr_javadoccomment">   *</em>
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>  <em class="jxr_javadoccomment">   * @param numberOfChildrenAbleToRead the number of children in the classroom who can read</em>
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>  <em class="jxr_javadoccomment">   */</em>
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>    <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setNumberOfChildrenAbleToRead(Integer numberOfChildrenAbleToRead) {
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>      <strong class="jxr_keyword">this</strong>.numberOfChildrenAbleToRead = numberOfChildrenAbleToRead;
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>    }
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>  
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>    <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>  <em class="jxr_javadoccomment">   * Converts a substitute teacher into a full time preschool teacher by using the abstract class</em>
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>  <em class="jxr_javadoccomment">   * to help.</em>
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>  <em class="jxr_javadoccomment">   *</em>
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>  <em class="jxr_javadoccomment">   * @param substitute the substitute teacher wishing to be converted to full time</em>
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>  <em class="jxr_javadoccomment">   * @param classroom the classroom she wants to be a full time teacher for</em>
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>  <em class="jxr_javadoccomment">   * @param coteacher the co-teacher she will be teaching with</em>
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>  <em class="jxr_javadoccomment">   * @return a new preschool teacher</em>
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>  <em class="jxr_javadoccomment">   */</em>
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>    <strong class="jxr_keyword">public</strong> <a href="../../../../../../edu/neu/ccs/cs5004/problem1/abstractTeacher.html">abstractTeacher</a> convertSubstituteTeacher(<a href="../../../../../../edu/neu/ccs/cs5004/problem1/abstractTeacher.html">abstractTeacher</a> substitute,
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>        String classroom, <a href="../../../../../../edu/neu/ccs/cs5004/problem1/Name.html">Name</a> coteacher) {
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>      newPreschoolTeacher.setName(substitute.getName());
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>      newPreschoolTeacher.setCoteacher(coteacher);
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>      newPreschoolTeacher.setClassroom(classroom);
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>      <strong class="jxr_keyword">return</strong> newPreschoolTeacher;
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>    }
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>  
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>    @Override
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>    <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> equals(Object o) {
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>      <strong class="jxr_keyword">if</strong> (<strong class="jxr_keyword">this</strong> == o) {
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>        <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>      }
+<a class="jxr_linenumber" name="L76" href="#L76">76</a>      <strong class="jxr_keyword">if</strong> (o == <strong class="jxr_keyword">null</strong> || getClass() != o.getClass()) {
+<a class="jxr_linenumber" name="L77" href="#L77">77</a>        <strong class="jxr_keyword">return</strong> false;
+<a class="jxr_linenumber" name="L78" href="#L78">78</a>      }
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>      <a href="../../../../../../edu/neu/ccs/cs5004/problem1/preschool/preschoolTeacher.html">preschoolTeacher</a> that = (preschoolTeacher) o;
+<a class="jxr_linenumber" name="L80" href="#L80">80</a>      <strong class="jxr_keyword">return</strong> Objects.equals(numberOfChildrenAbleToRead, that.numberOfChildrenAbleToRead);
+<a class="jxr_linenumber" name="L81" href="#L81">81</a>    }
+<a class="jxr_linenumber" name="L82" href="#L82">82</a>  
+<a class="jxr_linenumber" name="L83" href="#L83">83</a>    @Override
+<a class="jxr_linenumber" name="L84" href="#L84">84</a>    <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> hashCode() {
+<a class="jxr_linenumber" name="L85" href="#L85">85</a>      <strong class="jxr_keyword">return</strong> Objects.hash(numberOfChildrenAbleToRead);
+<a class="jxr_linenumber" name="L86" href="#L86">86</a>    }
+<a class="jxr_linenumber" name="L87" href="#L87">87</a>  
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>    @Override
+<a class="jxr_linenumber" name="L89" href="#L89">89</a>    <strong class="jxr_keyword">public</strong> String toString() {
+<a class="jxr_linenumber" name="L90" href="#L90">90</a>      <strong class="jxr_keyword">return</strong> <span class="jxr_string">"preschoolTeacher{"</span> +
+<a class="jxr_linenumber" name="L91" href="#L91">91</a>          <span class="jxr_string">", name="</span> + name +
+<a class="jxr_linenumber" name="L92" href="#L92">92</a>          <span class="jxr_string">", coteacher="</span> + coteacher +
+<a class="jxr_linenumber" name="L93" href="#L93">93</a>          <span class="jxr_string">", classroom='"</span> + classroom + '\'' +
+<a class="jxr_linenumber" name="L94" href="#L94">94</a>          <span class="jxr_string">", currentNumberOfChildren="</span> + currentNumberOfChildren +
+<a class="jxr_linenumber" name="L95" href="#L95">95</a>          <span class="jxr_string">", maximumNumberOfChildren="</span> + maximumNumberOfChildren +
+<a class="jxr_linenumber" name="L96" href="#L96">96</a>          <span class="jxr_string">", vacationStatus="</span> + vacationStatus +
+<a class="jxr_linenumber" name="L97" href="#L97">97</a>          <span class="jxr_string">", numberOfChildrenAbleToRead="</span> + numberOfChildrenAbleToRead +
+<a class="jxr_linenumber" name="L98" href="#L98">98</a>          '}';
+<a class="jxr_linenumber" name="L99" href="#L99">99</a>    }
+<a class="jxr_linenumber" name="L100" href="#L100">100</a> }
+</pre>
+<hr/>
+<div id="footer">Copyright &#169; 2019. All rights reserved.</div>
+</body>
+</html>

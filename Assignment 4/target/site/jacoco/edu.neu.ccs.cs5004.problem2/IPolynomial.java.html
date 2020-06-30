@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>IPolynomial.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CS5004 Assignment</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.problem2</a> &gt; <span class="el_source">IPolynomial.java</span></div><h1>IPolynomial.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.problem2;
+
+public interface IPolynomial {
+  /**
+   * IPolynomial is a polynomial expression consisting of variables and coefficients.
+   * An example of a polynomial looks like: 5x^4 + 3x^3 + 2x + 3.
+   * Each expression has a coefficient (such as 5), a variable (such as x) and a power (such as 4)
+   * which raises a coefficient to that power.
+   * Coefficient - Leading number before the 'x'
+   * Variable - the alphabetic variable (x)
+   * Power - the number that the variable is raised too.
+   * Additionally, there is a degree of polynomial which can be classified as the highest degree of
+   * the leading coefficient.
+   */
+
+  /**
+   * Create the empty polynomial.
+   *
+   * @return the empty polynomial
+   */
+  static IPolynomial emptyPolynomial() {
+<span class="nc" id="L22">    return null;</span>
+  }
+
+  /**
+   * AddTerm method allows the user to add a coefficient and power to a given polynomial.
+   *
+   * @param coefficient the coefficient to be added to the polynomial
+   * @param power the power the coefficient will be raised to.
+   */
+  void addTerm(Integer coefficient, Integer power);
+
+  /**
+   * removeTerm method gives the user the ability to remove any, and all coefficients with that
+   * specific power.
+   *
+   * @param power the power (exponent) that is used to search for the coefficient we want to remove
+   */
+  void removeTerm(Integer power);
+
+  /**
+   * Gets the highest degree of the polynomial.
+   *
+   * @return the highest degree of the polynomial, represented as an Integer.
+   */
+  Integer getDegree();
+
+  /**
+   * Gets the coefficient that has the specific power Integer attached to it.
+   *
+   * @param power the degree that a coefficient is raised to
+   * @return a coefficient
+   */
+  Integer getCoefficient(Integer power);
+
+  /**
+   * Takes another polynomial object and returns true to check if they are the same. Two polynomials
+   * are the same if they contain the same terms.
+   *
+   * @param object a polynomial
+   * @return true or false
+   */
+  Boolean isSame(IPolynomial object);
+
+  /**
+   * Checks to see if the Polynomial expression contains no nodes (is empty - returns true if the
+   * expression is empty, returns false if the expression contains nodes).
+   *
+   * @return true or false
+   */
+  Boolean isEmpty();
+
+  /**
+   * Method evaluates the polynomial by interchanging the variables with the inputted Double.
+   *
+   * @param number the number to interchange the variables with.
+   * @return the result of the polynomial, when using the specific number
+   */
+  Double evaluate(Double number);
+
+  /**
+   * A method that takes another polynomial and adds it to the original.
+   *
+   * @param object a polynomial expression
+   * @return a new polynomial
+   */
+  IPolynomial add(IPolynomial object);
+
+  /**
+   * A method that takes another polynomial and multiplies it to the original.
+   *
+   * @param object a polynomial expression
+   * @return a new polynomial
+   */
+  IPolynomial multiply(IPolynomial object);
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

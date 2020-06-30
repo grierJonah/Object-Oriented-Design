@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>StandardRow.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CS5004 Assignment</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.problem3.row</a> &gt; <span class="el_source">StandardRow.java</span></div><h1>StandardRow.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.problem3.row;
+
+import edu.neu.ccs.cs5004.problem3.seat.Seat;
+import java.util.ArrayList;
+
+public class StandardRow extends AbstractRow {
+
+  protected Integer numberOfSeatsInRow;
+<span class="fc" id="L9">  protected ArrayList&lt;Seat&gt; Row = new ArrayList&lt;&gt;();</span>
+
+  /**
+   * Constructs a new row with the given parameters: A number of seats in each row, the row number,
+   * and a Boolean value if the row is wheel chair accessible or not.
+   * @param numberOfSeatsInRow the number of seats in the row
+   * @param rowNumber the row number from the screen (1 being closest to screen)
+   */
+<span class="fc" id="L17">  public StandardRow(Integer numberOfSeatsInRow, Integer rowNumber) {</span>
+<span class="fc" id="L18">    this.numberOfSeatsInRow = numberOfSeatsInRow;</span>
+<span class="fc" id="L19">    this.rowNumber = rowNumber;</span>
+<span class="fc" id="L20">  }</span>
+
+  /**
+   * Gets the number of seats in the row.
+   *
+   * @return the number of seats in the row, represented as an Integer
+   */
+  public Integer getNumberOfSeatsInRow() {
+<span class="fc" id="L28">    return this.numberOfSeatsInRow;</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

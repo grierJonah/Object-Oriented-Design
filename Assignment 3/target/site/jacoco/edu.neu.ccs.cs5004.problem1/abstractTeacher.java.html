@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>abstractTeacher.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CS5004 Assignment</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.problem1</a> &gt; <span class="el_source">abstractTeacher.java</span></div><h1>abstractTeacher.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.problem1;
+
+import java.util.Objects;
+
+/**
+ * An abstract class representing a Teacher
+ */
+public abstract class abstractTeacher implements ITeacher {
+
+  protected Name name;
+  protected String classroom;
+  protected Name coteacher;
+  protected Integer currentNumberOfChildren;
+  protected Integer maximumNumberOfChildren;
+  protected Boolean vacationStatus;
+  protected abstractTeacher newTeacher;
+
+  /**
+   * Constructs a new Teacher with the given parameters.
+   *
+   * @param name the teachers name
+   * @param classroom the classroom the teacher teaches in, represented as a String
+   * @param coteacher the teachers co-teacher, represented as a Name object
+   * @param currentNumberOfChildren the current number of kids in the class
+   * @param maximumNumberOfChildren the maximum number of kids allowed in the class
+   * @param vacationStatus a Boolean check to see if the teacher is on vacation or not
+   */
+  public abstractTeacher(Name name, String classroom, Name coteacher,
+<span class="fc" id="L29">      Integer currentNumberOfChildren, Integer maximumNumberOfChildren, Boolean vacationStatus) {</span>
+<span class="fc" id="L30">    this.name = name;</span>
+<span class="fc" id="L31">    this.coteacher = coteacher;</span>
+<span class="fc" id="L32">    this.classroom = classroom;</span>
+<span class="fc" id="L33">    this.currentNumberOfChildren = currentNumberOfChildren;</span>
+<span class="fc" id="L34">    this.maximumNumberOfChildren = maximumNumberOfChildren;</span>
+<span class="fc" id="L35">    this.vacationStatus = vacationStatus;</span>
+<span class="fc" id="L36">  }</span>
+
+  /**
+   * Gets the teachers name.
+   *
+   * @return the teachers name.
+   */
+  public Name getName() {
+<span class="fc" id="L44">    return name;</span>
+  }
+
+  /**
+   * Sets the teachers name.
+   *
+   * @param name the teachers name.
+   */
+  public void setName(Name name) {
+<span class="fc" id="L53">    this.name = name;</span>
+<span class="fc" id="L54">  }</span>
+
+  /**
+   * Gets the current teacher's classroom.
+   *
+   * @return the teacher's classroom.
+   */
+  public String getClassroom() {
+<span class="fc" id="L62">    return classroom;</span>
+  }
+
+  /**
+   * Sets the current teacher's classroom.
+   *
+   * @param classroom the current teacher's classroom.
+   */
+  public void setClassroom(String classroom) {
+<span class="fc" id="L71">    this.classroom = classroom;</span>
+<span class="fc" id="L72">  }</span>
+
+  /**
+   * Gets the Co-Teacher's name.
+   *
+   * @return the Co-Teacher's name.
+   */
+  public Name getCoteacher() {
+<span class="fc" id="L80">    return coteacher;</span>
+  }
+
+  /**
+   * Sets the Co-Teacher's name.
+   *
+   * @param coteacher the Co-Teacher's name
+   */
+  public void setCoteacher(Name coteacher) {
+<span class="fc" id="L89">    this.coteacher = coteacher;</span>
+<span class="fc" id="L90">  }</span>
+
+  /**
+   * Gets the current number of kids in the classroom.
+   *
+   * @return the current number of kids in the classroom.
+   */
+  public Integer getCurrentNumberOfChildren() {
+<span class="fc" id="L98">    return currentNumberOfChildren;</span>
+  }
+
+  /**
+   * Sets the current number of kids in the classroom.
+   *
+   * @param currentNumberOfChildren the current number of kids in the classroom.
+   */
+  public void setCurrentNumberOfChildren(Integer currentNumberOfChildren) {
+<span class="fc" id="L107">    this.currentNumberOfChildren = currentNumberOfChildren;</span>
+<span class="fc" id="L108">  }</span>
+
+  /**
+   * Gets the maximum number of kids to be in the classroom.
+   *
+   * @return the maximum number of kids to be in the classroom.
+   */
+  public Integer getMaximumNumberOfChildren() {
+<span class="fc" id="L116">    return maximumNumberOfChildren;</span>
+  }
+
+  /**
+   * Sets the maximum number of kids to be in the classroom.
+   *
+   * @param maximumNumberOfChildren the maximum number of kids to be in the classroom.
+   */
+  public void setMaximumNumberOfChildren(Integer maximumNumberOfChildren) {
+<span class="fc" id="L125">    this.maximumNumberOfChildren = maximumNumberOfChildren;</span>
+<span class="fc" id="L126">  }</span>
+
+  /**
+   * Gets the vacation status of the teacher.
+   *
+   * @return the vacation status of the teacher, represented as a Boolean (True or False)
+   */
+  public Boolean getVacationStatus() {
+<span class="fc" id="L134">    return vacationStatus;</span>
+  }
+
+  /**
+   * Sets the vacation status of the teacher.
+   *
+   * @param vacationStatus the vacation status of the teacher, represented as a Boolean (True or
+   * False)
+   */
+  public void setVacationStatus(Boolean vacationStatus) {
+<span class="fc" id="L144">    this.vacationStatus = vacationStatus;</span>
+<span class="fc" id="L145">  }</span>
+
+
+  @Override
+  public boolean equals(Object o) {
+<span class="pc bpc" id="L150" title="1 of 2 branches missed.">    if (this == o) {</span>
+<span class="nc" id="L151">      return true;</span>
+    }
+<span class="pc bpc" id="L153" title="2 of 4 branches missed.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="fc" id="L154">      return false;</span>
+    }
+<span class="nc" id="L156">    abstractTeacher that = (abstractTeacher) o;</span>
+<span class="nc bnc" id="L157" title="All 2 branches missed.">    return Objects.equals(name, that.name) &amp;&amp;</span>
+<span class="nc bnc" id="L158" title="All 2 branches missed.">        Objects.equals(classroom, that.classroom) &amp;&amp;</span>
+<span class="nc bnc" id="L159" title="All 2 branches missed.">        Objects.equals(coteacher, that.coteacher) &amp;&amp;</span>
+<span class="nc bnc" id="L160" title="All 2 branches missed.">        Objects.equals(currentNumberOfChildren, that.currentNumberOfChildren) &amp;&amp;</span>
+<span class="nc bnc" id="L161" title="All 2 branches missed.">        Objects.equals(maximumNumberOfChildren, that.maximumNumberOfChildren) &amp;&amp;</span>
+<span class="nc bnc" id="L162" title="All 2 branches missed.">        Objects.equals(vacationStatus, that.vacationStatus);</span>
+  }
+
+  @Override
+  public int hashCode() {
+<span class="fc" id="L167">    return Objects</span>
+<span class="fc" id="L168">        .hash(name, classroom, coteacher, currentNumberOfChildren, maximumNumberOfChildren,</span>
+            vacationStatus);
+  }
+
+  @Override
+  public String toString() {
+<span class="fc" id="L174">    return &quot;abstractTeacher{&quot; +</span>
+        &quot;name=&quot; + name +
+        &quot;, classroom='&quot; + classroom + '\'' +
+        &quot;, coteacher=&quot; + coteacher +
+        &quot;, currentNumberOfChildren=&quot; + currentNumberOfChildren +
+        &quot;, maximumNumberOfChildren=&quot; + maximumNumberOfChildren +
+        &quot;, vacationStatus=&quot; + vacationStatus +
+        '}';
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

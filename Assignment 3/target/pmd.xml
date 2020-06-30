@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="5.3.5" timestamp="2019-06-08T19:40:04.171">
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 3/src/main/java/edu/neu/ccs/cs5004/problem1/abstractTeacher.java">
+<violation beginline="8" endline="183" begincolumn="17" endcolumn="1" rule="ClassNamingConventions" ruleset="Naming" package="edu.neu.ccs.cs5004.problem1" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ClassNamingConventions" priority="1">
+Class names should begin with an uppercase character
+</violation>
+<violation beginline="149" endline="149" begincolumn="32" endcolumn="32" rule="ShortVariable" ruleset="Naming" package="edu.neu.ccs.cs5004.problem1" class="abstractTeacher" method="equals" variable="o" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ShortVariable" priority="3">
+Avoid variables with short names like o
+</violation>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 3/src/main/java/edu/neu/ccs/cs5004/problem1/infant/infantTeacher.java">
+<violation beginline="12" endline="124" begincolumn="8" endcolumn="1" rule="ClassNamingConventions" ruleset="Naming" package="edu.neu.ccs.cs5004.problem1.infant" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ClassNamingConventions" priority="1">
+Class names should begin with an uppercase character
+</violation>
+<violation beginline="94" endline="94" begincolumn="32" endcolumn="32" rule="ShortVariable" ruleset="Naming" package="edu.neu.ccs.cs5004.problem1.infant" class="infantTeacher" method="equals" variable="o" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ShortVariable" priority="3">
+Avoid variables with short names like o
+</violation>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 3/src/main/java/edu/neu/ccs/cs5004/problem1/preschool/preschoolTeacher.java">
+<violation beginline="12" endline="100" begincolumn="8" endcolumn="1" rule="ClassNamingConventions" ruleset="Naming" package="edu.neu.ccs.cs5004.problem1.preschool" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ClassNamingConventions" priority="1">
+Class names should begin with an uppercase character
+</violation>
+<violation beginline="72" endline="72" begincolumn="32" endcolumn="32" rule="ShortVariable" ruleset="Naming" package="edu.neu.ccs.cs5004.problem1.preschool" class="preschoolTeacher" method="equals" variable="o" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ShortVariable" priority="3">
+Avoid variables with short names like o
+</violation>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 3/src/main/java/edu/neu/ccs/cs5004/problem1/substitute/abstractSubstituteTeacher.java">
+<violation beginline="11" endline="115" begincolumn="17" endcolumn="1" rule="ClassNamingConventions" ruleset="Naming" package="edu.neu.ccs.cs5004.problem1.substitute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ClassNamingConventions" priority="1">
+Class names should begin with an uppercase character
+</violation>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 3/src/main/java/edu/neu/ccs/cs5004/problem1/substitute/substituteTeacher.java">
+<violation beginline="11" endline="59" begincolumn="8" endcolumn="1" rule="ClassNamingConventions" ruleset="Naming" package="edu.neu.ccs.cs5004.problem1.substitute" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ClassNamingConventions" priority="1">
+Class names should begin with an uppercase character
+</violation>
+<violation beginline="32" endline="32" begincolumn="32" endcolumn="32" rule="ShortVariable" ruleset="Naming" package="edu.neu.ccs.cs5004.problem1.substitute" class="substituteTeacher" method="equals" variable="o" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ShortVariable" priority="3">
+Avoid variables with short names like o
+</violation>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 3/src/main/java/edu/neu/ccs/cs5004/problem1/toddler/toddlerTeacher.java">
+<violation beginline="12" endline="126" begincolumn="8" endcolumn="1" rule="ClassNamingConventions" ruleset="Naming" package="edu.neu.ccs.cs5004.problem1.toddler" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ClassNamingConventions" priority="1">
+Class names should begin with an uppercase character
+</violation>
+<violation beginline="94" endline="94" begincolumn="32" endcolumn="32" rule="ShortVariable" ruleset="Naming" package="edu.neu.ccs.cs5004.problem1.toddler" class="toddlerTeacher" method="equals" variable="o" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ShortVariable" priority="3">
+Avoid variables with short names like o
+</violation>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 3/src/main/java/edu/neu/ccs/cs5004/problem2/exterior/abstractExterior.java">
+<violation beginline="10" endline="106" begincolumn="17" endcolumn="1" rule="ClassNamingConventions" ruleset="Naming" package="edu.neu.ccs.cs5004.problem2.exterior" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ClassNamingConventions" priority="1">
+Class names should begin with an uppercase character
+</violation>
+<violation beginline="22" endline="22" begincolumn="18" endcolumn="30" rule="UnusedPrivateField" ruleset="Unused Code" package="edu.neu.ccs.cs5004.problem2.exterior" class="abstractExterior" variable="exteriorPrice" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'exteriorPrice'.
+</violation>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 3/src/main/java/edu/neu/ccs/cs5004/problem2/exterior/windowCleaning.java">
+<violation beginline="9" endline="71" begincolumn="8" endcolumn="1" rule="ClassNamingConventions" ruleset="Naming" package="edu.neu.ccs.cs5004.problem2.exterior" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ClassNamingConventions" priority="1">
+Class names should begin with an uppercase character
+</violation>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 3/src/main/java/edu/neu/ccs/cs5004/problem2/interior/Cleaning.java">
+<violation beginline="4" endline="4" begincolumn="1" endcolumn="69" rule="UnusedImports" ruleset="Import Statements" package="edu.neu.ccs.cs5004.problem2.interior" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'edu.neu.ccs.cs5004.problem2.exceptions.TooManyFloorsException'
+</violation>
+<violation beginline="32" endline="32" begincolumn="12" endcolumn="32" rule="VariableNamingConventions" ruleset="Naming" package="edu.neu.ccs.cs5004.problem2.interior" class="Cleaning" method="calculatePrice" variable="InteriorCleaningPrice" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#VariableNamingConventions" priority="1">
+Variables should start with a lowercase character, 'InteriorCleaningPrice' starts with uppercase character.
+</violation>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 3/src/main/java/edu/neu/ccs/cs5004/problem2/interior/Painting.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="69" rule="UnusedImports" ruleset="Import Statements" package="edu.neu.ccs.cs5004.problem2.interior" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'edu.neu.ccs.cs5004.problem2.exceptions.TooManyFloorsException'
+</violation>
+<violation beginline="13" endline="13" begincolumn="18" endcolumn="27" rule="UnusedPrivateField" ruleset="Unused Code" package="edu.neu.ccs.cs5004.problem2.interior" class="Painting" variable="finalPrice" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'finalPrice'.
+</violation>
+<violation beginline="33" endline="33" begincolumn="12" endcolumn="32" rule="VariableNamingConventions" ruleset="Naming" package="edu.neu.ccs.cs5004.problem2.interior" class="Painting" method="calculatePrice" variable="InteriorPaintingPrice" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#VariableNamingConventions" priority="1">
+Variables should start with a lowercase character, 'InteriorPaintingPrice' starts with uppercase character.
+</violation>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 3/src/main/java/edu/neu/ccs/cs5004/problem2/interior/abstractInterior.java">
+<violation beginline="9" endline="129" begincolumn="17" endcolumn="1" rule="ClassNamingConventions" ruleset="Naming" package="edu.neu.ccs.cs5004.problem2.interior" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ClassNamingConventions" priority="1">
+Class names should begin with an uppercase character
+</violation>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 3/src/main/java/edu/neu/ccs/cs5004/problem2/service/abstractService.java">
+<violation beginline="7" endline="199" begincolumn="17" endcolumn="1" rule="ClassNamingConventions" ruleset="Naming" package="edu.neu.ccs.cs5004.problem2.service" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ClassNamingConventions" priority="1">
+Class names should begin with an uppercase character
+</violation>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 3/src/main/java/edu/neu/ccs/cs5004/problem3/row/AbstractRow.java">
+<violation beginline="9" endline="9" begincolumn="29" endcolumn="31" rule="VariableNamingConventions" ruleset="Naming" package="edu.neu.ccs.cs5004.problem3.row" class="AbstractRow" variable="Row" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#VariableNamingConventions" priority="1">
+Variables should start with a lowercase character, 'Row' starts with uppercase character.
+</violation>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 3/src/main/java/edu/neu/ccs/cs5004/problem3/row/StandardRow.java">
+<violation beginline="9" endline="9" begincolumn="29" endcolumn="31" rule="VariableNamingConventions" ruleset="Naming" package="edu.neu.ccs.cs5004.problem3.row" class="StandardRow" variable="Row" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#VariableNamingConventions" priority="1">
+Variables should start with a lowercase character, 'Row' starts with uppercase character.
+</violation>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 3/src/main/java/edu/neu/ccs/cs5004/problem3/row/WheelChairRow.java">
+<violation beginline="9" endline="9" begincolumn="13" endcolumn="62" rule="AvoidFieldNameMatchingTypeName" ruleset="Naming" package="edu.neu.ccs.cs5004.problem3.row" class="WheelChairRow" variable="wheelChairRow" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#AvoidFieldNameMatchingTypeName" priority="3">
+It is somewhat confusing to have a field name matching the declaring class name
+</violation>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 3/src/main/java/edu/neu/ccs/cs5004/problem3/theater/Theater.java">
+<violation beginline="11" endline="11" begincolumn="13" endcolumn="63" rule="AvoidFieldNameMatchingTypeName" ruleset="Naming" package="edu.neu.ccs.cs5004.problem3.theater" class="Theater" variable="Theater" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#AvoidFieldNameMatchingTypeName" priority="3">
+It is somewhat confusing to have a field name matching the declaring class name
+</violation>
+<violation beginline="11" endline="11" begincolumn="36" endcolumn="42" rule="VariableNamingConventions" ruleset="Naming" package="edu.neu.ccs.cs5004.problem3.theater" class="Theater" variable="Theater" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#VariableNamingConventions" priority="1">
+Variables should start with a lowercase character, 'Theater' starts with uppercase character.
+</violation>
+</file>
+</pmd>

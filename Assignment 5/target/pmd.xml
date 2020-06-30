@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="5.3.5" timestamp="2019-07-13T08:35:44.099">
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 5/src/main/java/edu/neu/ccs/cs5004/problem1/IList.java">
+<violation beginline="21" endline="21" begincolumn="27" endcolumn="27" rule="ShortVariable" ruleset="Naming" package="edu.neu.ccs.cs5004.problem1" class="IList" method="contains" variable="o" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ShortVariable" priority="3">
+Avoid variables with short names like o
+</violation>
+<violation beginline="31" endline="31" begincolumn="17" endcolumn="17" rule="ShortVariable" ruleset="Naming" package="edu.neu.ccs.cs5004.problem1" class="IList" method="add" variable="e" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ShortVariable" priority="3">
+Avoid variables with short names like e
+</violation>
+<violation beginline="37" endline="37" begincolumn="25" endcolumn="25" rule="ShortVariable" ruleset="Naming" package="edu.neu.ccs.cs5004.problem1" class="IList" method="remove" variable="o" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ShortVariable" priority="3">
+Avoid variables with short names like o
+</violation>
+<violation beginline="42" endline="42" begincolumn="37" endcolumn="37" rule="ShortVariable" ruleset="Naming" package="edu.neu.ccs.cs5004.problem1" class="IList" method="containsAll" variable="c" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/naming.html#ShortVariable" priority="3">
+Avoid variables with short names like c
+</violation>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/Assignment 5/src/main/java/edu/neu/ccs/cs5004/problem3/PreOrder.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="60" rule="UnusedImports" ruleset="Import Statements" package="edu.neu.ccs.cs5004.problem3" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'jdk.nashorn.internal.objects.NativeArray.push'
+</violation>
+<violation beginline="50" endline="50" begincolumn="7" endcolumn="21" rule="AvoidBranchingStatementAsLastInLoop" ruleset="Basic" package="edu.neu.ccs.cs5004.problem3" class="PreOrder" method="next" externalInfoUrl="https://pmd.github.io/pmd-5.3.5/pmd-java/rules/java/basic.html#AvoidBranchingStatementAsLastInLoop" priority="2">
+Avoid using a branching statement as the last in a loop.
+</violation>
+</file>
+</pmd>

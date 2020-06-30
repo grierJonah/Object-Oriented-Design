@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>windowCleaning.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CS5004 Assignment</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.problem2.exterior</a> &gt; <span class="el_source">windowCleaning.java</span></div><h1>windowCleaning.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.problem2.exterior;
+
+import edu.neu.ccs.cs5004.problem2.exceptions.TooManyFloorsException;
+import edu.neu.ccs.cs5004.problem2.PropertySizeEnum;
+
+/**
+ * A window cleaning class that tracks the number of floors, and month of service.
+ */
+public class windowCleaning extends abstractExterior {
+
+  protected Double exteriorServicingPrice;
+  protected Double currentDiscount;
+  protected Double finalPrice;
+
+  /**
+   * Constructs a new window cleaning service with the given parameters.
+   *
+   * @param invoiceID the invoiceID of the window cleaning
+   * @param propertyAddress the property address of the scheduled window cleaning
+   * @param propertySize the property size represented as an enum (SMALL, MEDIUM, LARGE)
+   * @param monthlyService a Boolean value representing if the house is a recurrent buyer
+   * @param numberOfServices the number of services the property has purchased
+   * @param numberOfFloors the number of floors the house has
+   * @param month the month of the scheduled service, represented as an Integer
+   */
+  public windowCleaning(String invoiceID, String propertyAddress, PropertySizeEnum propertySize,
+      Boolean monthlyService, Integer numberOfServices, Integer numberOfFloors, Integer month) {
+<span class="fc" id="L28">    super(invoiceID, propertyAddress, propertySize,</span>
+        monthlyService, numberOfServices, numberOfFloors, month);
+<span class="fc" id="L30">  }</span>
+
+  /**
+   * This method calculates the dollar amount that a property owner will have to pay based on the
+   * attributes the property has. Additionally, in order for the property owner to have their
+   * windows cleaned, they must have a property with less than 3 floors. If they have a property
+   * with more than 3 floors, then an exception will be thrown and a cost will not be provided.
+   * Also, the calculatePrice method also notes whether or not the property owner has any valid
+   * discounts to be applied. Lastly, if the property does have more than 1 floor (and less than 3),
+   * the property is subject to an additional 5% increase in price. The 5% will be added PRIOR to
+   * the discount.
+   *
+   * @return the final price the property owner has to pay.
+   */
+  @Override
+  public Double calculatePrice() throws TooManyFloorsException {
+<span class="fc" id="L46">    Double multipleFloorsFee = checkLadderHeight();</span>
+<span class="fc" id="L47">    Double exteriorServiceFee = calculateExteriorServicingPrice();</span>
+<span class="fc" id="L48">    Double discountPrice = calculateDiscountHelper();</span>
+<span class="fc" id="L49">    Double priceBeforeDiscount = exteriorServiceFee + (exteriorServiceFee * multipleFloorsFee);</span>
+<span class="fc" id="L50">    return finalPrice = priceBeforeDiscount - (priceBeforeDiscount * discountPrice);</span>
+  }
+
+  /**
+   * This method is a helper function to properly instantiate a window cleaning service. The ladders
+   * provided for the window cleaning service are only capable of reaching up to 3 stories. If the
+   * property requesting service has a property with more than 3 floors, then a
+   * TooManyFloorsException will be thrown.
+   *
+   * @return the percentage to be added to the final bill
+   */
+  private Double checkLadderHeight() throws TooManyFloorsException {
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">    if (numberOfFloors == 0) {</span>
+<span class="nc" id="L63">      return NO_COST;</span>
+<span class="pc bpc" id="L64" title="1 of 4 branches missed.">    } else if (numberOfFloors &gt; 1 &amp;&amp; numberOfFloors &lt;= 3) {</span>
+<span class="fc" id="L65">      return FIVE_PERCENT;</span>
+    } else {
+<span class="fc" id="L67">      throw new TooManyFloorsException(&quot;Error: Cannot schedule window cleaning. &quot;</span>
+          + &quot;Ladder height is limited to 3 stories.&quot;);
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

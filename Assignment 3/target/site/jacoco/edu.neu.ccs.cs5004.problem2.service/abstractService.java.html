@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>abstractService.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CS5004 Assignment</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.problem2.service</a> &gt; <span class="el_source">abstractService.java</span></div><h1>abstractService.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.problem2.service;
+
+import edu.neu.ccs.cs5004.problem2.IService;
+import edu.neu.ccs.cs5004.problem2.PropertySizeEnum;
+
+
+public abstract class abstractService implements IService {
+
+<span class="fc" id="L9">  public static final Double MONTHLY_SERVICE_USER = 0.1;</span>
+<span class="fc" id="L10">  public static final Double TENTH_SERVICE_DISCOUNT = 0.5;</span>
+<span class="fc" id="L11">  public static final Double TEN_PERCENT_OFF = 0.1;</span>
+<span class="fc" id="L12">  public static final Double FIFTY_PERCENT_OFF = 0.5;</span>
+
+<span class="fc" id="L14">  public static final Double NO_DISCOUNT = 0.0;</span>
+<span class="fc" id="L15">  public static final Double BASE_RATE = 80.0;</span>
+
+  protected String invoiceID;
+  protected String propertyAddress;
+  protected PropertySizeEnum propertySize;
+  protected Boolean scheduledMonthly;
+  protected Integer numberOfServices;
+
+  /**
+   * Constructs a new abstractInterior with the given parameters.
+   *
+   * @param invoiceID the invoiceID of the interior service
+   * @param propertyAddress the property address of the interior service
+   * @param propertySize the property size of the interior service, represented as an Enum
+   * @param scheduledMonthly a Boolean value checking if the service is monthly or a 1 time service
+   * @param numberOfServices the number of services the property has had, represented as an Integer
+   */
+  public abstractService(String invoiceID, String propertyAddress, PropertySizeEnum propertySize,
+<span class="fc" id="L33">      Boolean scheduledMonthly, Integer numberOfServices) {</span>
+<span class="fc" id="L34">    this.invoiceID = invoiceID;</span>
+<span class="fc" id="L35">    this.propertyAddress = propertyAddress;</span>
+<span class="fc" id="L36">    this.propertySize = propertySize;</span>
+<span class="fc" id="L37">    this.scheduledMonthly = scheduledMonthly;</span>
+<span class="fc" id="L38">    this.numberOfServices = numberOfServices;</span>
+<span class="fc" id="L39">  }</span>
+
+  /**
+   * This method checks to see if the property scheduling a service is a monthly subscriber to the
+   * servicing. If they are, each month they get a 10% discount to their final bill. However, if the
+   * property has accumulated their 10th number of services they are given a 50% off discount. The
+   * monthly 10% is then disregarded so they will not get a 60% discount. If the property has
+   * neither the 10th accumulated servicing, and they are not monthly subscribers to the servicing,
+   * no discount will be applied.
+   *
+   * @return the percentage to be discounted from the final bill.
+   */
+  public Double checkMonthlyDiscountUser() {
+<span class="fc bfc" id="L52" title="All 2 branches covered.">    if (scheduledMonthly == Boolean.TRUE) {</span>
+<span class="fc" id="L53">      return MONTHLY_SERVICE_USER;</span>
+    } else {
+<span class="fc" id="L55">      return NO_DISCOUNT;</span>
+    }
+  }
+
+  /**
+   * This method helps check if the property owner is at there tenth service. By checking if the
+   * number of visits is divisible by 10, we can track if they are up for their 50% discount.
+   *
+   * @return a 50% discount or no discount, represented as a Double (0.5 or 0.0)
+   */
+  @Override
+  public Double tenthServiceDiscount() {
+    // Check if the number of services is the 10th, returns 0.50 to be multiplied to final bill
+<span class="fc bfc" id="L68" title="All 2 branches covered.">    if ((this.numberOfServices % 10) == 9) {</span>
+<span class="fc" id="L69">      return TENTH_SERVICE_DISCOUNT;</span>
+    } else {
+<span class="fc" id="L71">      return NO_DISCOUNT;</span>
+    }
+  }
+
+  /**
+   * Checks all likely scenarios of discounts being applied. There are two discounts: 10 percent
+   * off, and 50 percent off. If the property owner is a monthly subscription payer, they get 10
+   * percent off their final bill just for retaining service with the company. If the property owner
+   * is purchasing their 10th service they get a 50% discount. However, if they are both a monthly
+   * purchaser and they are getting their 10th 50% discount, then they only get the 50% discount
+   * applied.
+   *
+   * @return the final discount (0.1, 0.5, or none, represented as a Double)
+   */
+  public Double calculateDiscountHelper() {
+<span class="fc" id="L86">    Double monthlyDiscountCheck = checkMonthlyDiscountUser();</span>
+<span class="fc" id="L87">    Double tenthServiceCheck = tenthServiceDiscount();</span>
+    // If both discounts apply return 50%
+<span class="fc bfc" id="L89" title="All 2 branches covered.">    if (monthlyDiscountCheck.equals(TEN_PERCENT_OFF)</span>
+<span class="fc bfc" id="L90" title="All 2 branches covered.">        &amp;&amp; tenthServiceCheck.equals(FIFTY_PERCENT_OFF)) {</span>
+<span class="fc" id="L91">      return FIFTY_PERCENT_OFF;</span>
+<span class="fc bfc" id="L92" title="All 2 branches covered.">    } else if (monthlyDiscountCheck.equals(TEN_PERCENT_OFF)) {</span>
+<span class="fc" id="L93">      return TEN_PERCENT_OFF;</span>
+<span class="fc bfc" id="L94" title="All 2 branches covered.">    } else if (tenthServiceCheck.equals(FIFTY_PERCENT_OFF)) {</span>
+<span class="fc" id="L95">      return FIFTY_PERCENT_OFF;</span>
+    } else {
+<span class="fc" id="L97">      return NO_DISCOUNT;</span>
+    }
+  }
+
+  @Override
+  public Double baseRate() {
+<span class="fc" id="L103">    return BASE_RATE;</span>
+  }
+
+
+  /**
+   * Gets the invoiceID of the service.
+   *
+   * @return the invoiceID as a String
+   */
+  public String getInvoiceID() {
+<span class="fc" id="L113">    return invoiceID;</span>
+  }
+
+  /**
+   * Sets the invoiceID of the service.
+   *
+   * @param invoiceID the service invoiceID
+   */
+  public void setInvoiceID(String invoiceID) {
+<span class="fc" id="L122">    this.invoiceID = invoiceID;</span>
+<span class="fc" id="L123">  }</span>
+
+  /**
+   * Gets the property address of the service.
+   *
+   * @return the property address
+   */
+  public String getPropertyAddress() {
+<span class="fc" id="L131">    return propertyAddress;</span>
+  }
+
+  /**
+   * Sets the property address of the service.
+   *
+   * @param propertyAddress the property address of the service
+   */
+  public void setPropertyAddress(String propertyAddress) {
+<span class="fc" id="L140">    this.propertyAddress = propertyAddress;</span>
+<span class="fc" id="L141">  }</span>
+
+  /**
+   * Gets the property size of the property.
+   *
+   * @return the property size of the house, represented as an enum
+   */
+  public PropertySizeEnum getPropertySize() {
+<span class="fc" id="L149">    return propertySize;</span>
+  }
+
+  /**
+   * Sets the property size of the property.
+   *
+   * @param propertySize an enum (SMALL, MEDIUM, or LARGE)
+   */
+  public void setPropertySize(PropertySizeEnum propertySize) {
+<span class="fc" id="L158">    this.propertySize = propertySize;</span>
+<span class="fc" id="L159">  }</span>
+
+  /**
+   * A monthly service check to see if the property is scheduled on a monthly recurrence or if the
+   * service is a one time thing.
+   *
+   * @return A True or False value
+   */
+  public Boolean getMonthlyService() {
+<span class="fc" id="L168">    return scheduledMonthly;</span>
+  }
+
+  /**
+   * Sets the property to either have a one time service, or a monthly subscription to servicing.
+   *
+   * @param scheduledMonthly a True or False value
+   */
+  public void setMonthlyService(Boolean scheduledMonthly) {
+<span class="fc" id="L177">    this.scheduledMonthly = scheduledMonthly;</span>
+<span class="fc" id="L178">  }</span>
+
+  /**
+   * Gets the number of services that the property has had.
+   *
+   * @return the Integer value associated with how many services the property owner has had
+   */
+  public Integer getNumberOfServices() {
+<span class="fc" id="L186">    return this.numberOfServices;</span>
+  }
+
+  @Override
+  public String toString() {
+<span class="fc" id="L191">    return &quot;abstractService{&quot; +</span>
+        &quot;invoiceID='&quot; + invoiceID + '\'' +
+        &quot;, propertyAddress='&quot; + propertyAddress + '\'' +
+        &quot;, propertySize=&quot; + propertySize +
+        &quot;, scheduledMonthly=&quot; + scheduledMonthly +
+        &quot;, numberOfServices=&quot; + numberOfServices +
+        '}';
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

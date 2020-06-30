@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Cleaning.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CS5004 Assignment</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.problem2.interior</a> &gt; <span class="el_source">Cleaning.java</span></div><h1>Cleaning.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.problem2.interior;
+
+import edu.neu.ccs.cs5004.problem2.PropertySizeEnum;
+import edu.neu.ccs.cs5004.problem2.exceptions.TooManyFloorsException;
+
+/**
+ * A Cleaning class for interior servicing. The cleaning class tracks the number of pets a property
+ * owner has in addition to the invoiceID, property address, property size, a monthly servicing
+ * check, and a track to see how many services the property has had in the past.
+ */
+public class Cleaning extends abstractInterior {
+  protected Double finalPrice;
+
+  /**
+   * Constructs a new Cleaning service with the given parameters.
+   *
+   * @param invoiceID the invoiceID of the Cleaning service
+   * @param propertyAddress the property address of the property
+   * @param propertySize the property size represented as an enum (SMALL, MEDIUM, LARGE)
+   * @param monthlyService a Boolean value checking if the service is monthly or a 1 time service
+   * @param numberOfServices the number of services a property has had
+   * @param numberOfPets the number of pets a property owner has
+   */
+  public Cleaning(String invoiceID, String propertyAddress, PropertySizeEnum propertySize,
+      Boolean monthlyService, Integer numberOfServices, Integer numberOfPets) {
+<span class="fc" id="L26">    super(invoiceID, propertyAddress, propertySize,</span>
+        monthlyService, numberOfServices, numberOfPets);
+<span class="fc" id="L28">  }</span>
+
+  @Override
+  public Double calculatePrice() {
+<span class="fc" id="L32">    Double InteriorCleaningPrice = calculateInteriorCleaningPrice();</span>
+<span class="fc" id="L33">    Double petFee = calculatePetPrice();</span>
+<span class="fc" id="L34">    Double discountPrice = calculateDiscountHelper();</span>
+<span class="fc" id="L35">    Double withoutDiscountPrice = InteriorCleaningPrice + (InteriorCleaningPrice * petFee);</span>
+<span class="fc" id="L36">    return finalPrice = withoutDiscountPrice - (withoutDiscountPrice * discountPrice);</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

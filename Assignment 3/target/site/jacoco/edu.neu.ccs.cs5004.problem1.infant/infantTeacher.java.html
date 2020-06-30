@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>infantTeacher.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CS5004 Assignment</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.problem1.infant</a> &gt; <span class="el_source">infantTeacher.java</span></div><h1>infantTeacher.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.problem1.infant;
+
+import edu.neu.ccs.cs5004.problem1.Name;
+import edu.neu.ccs.cs5004.problem1.abstractTeacher;
+import java.util.Objects;
+
+/**
+ * A subclass of abstractTeacher representing an Infant Teacher. The Infant Teacher has all the same
+ * parameters of any other teacher with the addition of, a current number of crawling children, and
+ * current number of walking children.
+ */
+public class infantTeacher extends abstractTeacher {
+
+  private Integer currentNumberOfCrawlers;
+  private Integer currentNumberOfWalkers;
+  protected infantTeacher newInfantTeacher;
+
+  /**
+   * Constructs a new Infant Teacher with the given parameters.
+   *
+   * @param name the Infant Teacher's name
+   * @param classroom the Infant Teacher's classroom, represented as a String
+   * @param coteacher the Infant Teacher's Co-Teacher
+   * @param currentNumberOfChildren the current number of children in the classroom
+   * @param maximumNumberOfChildren the maximum number of children in the classroom
+   * @param vacationStatus the teacher's current vacation status, represented as a Boolean
+   * @param currentNumberOfCrawlers the current number of children who are crawling in the
+   * classroom
+   * @param currentNumberOfWalkers the current number of children who are walking in the classroom
+   */
+  public infantTeacher(Name name, String classroom, Name coteacher,
+      Integer currentNumberOfChildren, Integer maximumNumberOfChildren, Boolean vacationStatus,
+      Integer currentNumberOfCrawlers, Integer currentNumberOfWalkers) {
+<span class="fc" id="L34">    super(name, classroom, coteacher,</span>
+        currentNumberOfChildren, maximumNumberOfChildren, vacationStatus);
+<span class="fc" id="L36">    this.currentNumberOfCrawlers = currentNumberOfCrawlers;</span>
+<span class="fc" id="L37">    this.currentNumberOfWalkers = currentNumberOfWalkers;</span>
+<span class="fc" id="L38">  }</span>
+
+  /**
+   * Gets the current number of children who are crawling in the classroom.
+   *
+   * @return the current number of children who are crawling in the classroom.
+   */
+  public Integer getCurrentNumberOfCrawlers() {
+<span class="fc" id="L46">    return currentNumberOfCrawlers;</span>
+  }
+
+  /**
+   * Sets the current number of children who are crawling in the classroom.
+   *
+   * @param currentNumberOfCrawlers the current number of children who are crawling in the
+   * classroom.
+   */
+  public void setCurrentNumberOfCrawlers(Integer currentNumberOfCrawlers) {
+<span class="fc" id="L56">    this.currentNumberOfCrawlers = currentNumberOfCrawlers;</span>
+<span class="fc" id="L57">  }</span>
+
+  /**
+   * Gets the current number of children who are walking in the classroom.
+   *
+   * @return the current number of children who are walking in the classroom.
+   */
+  public Integer getCurrentNumberOfWalkers() {
+<span class="fc" id="L65">    return currentNumberOfWalkers;</span>
+  }
+
+  /**
+   * Sets the current number of children who are walking in the classroom.
+   *
+   * @param currentNumberOfWalkers the current number of children who are walking in the classroom.
+   */
+  public void setCurrentNumberOfWalkers(Integer currentNumberOfWalkers) {
+<span class="fc" id="L74">    this.currentNumberOfWalkers = currentNumberOfWalkers;</span>
+<span class="fc" id="L75">  }</span>
+
+  /**
+   * Converts a substitute teacher into a full time infant teacher by using the abstract class
+   * to help.
+   *
+   * @param substitute the substitute teacher wishing to be converted to full time
+   * @param classroom the classroom she wants to be a full time teacher for
+   * @param coteacher the co-teacher she will be teaching with
+   * @return a new infant teacher
+   */
+  public abstractTeacher convertSubstituteTeacher(abstractTeacher substitute, String classroom, Name coteacher) {
+<span class="nc" id="L87">    newInfantTeacher.setName(substitute.getName());</span>
+<span class="nc" id="L88">    newInfantTeacher.setClassroom(classroom);</span>
+<span class="nc" id="L89">    newInfantTeacher.setCoteacher(coteacher);</span>
+<span class="nc" id="L90">    return newInfantTeacher;</span>
+  }
+
+  @Override
+  public boolean equals(Object o) {
+<span class="pc bpc" id="L95" title="1 of 2 branches missed.">    if (this == o) {</span>
+<span class="nc" id="L96">      return true;</span>
+    }
+<span class="pc bpc" id="L98" title="2 of 4 branches missed.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L99">      return false;</span>
+    }
+<span class="fc" id="L101">    infantTeacher that = (infantTeacher) o;</span>
+<span class="pc bpc" id="L102" title="1 of 2 branches missed.">    return Objects.equals(currentNumberOfCrawlers, that.currentNumberOfCrawlers) &amp;&amp;</span>
+<span class="pc bpc" id="L103" title="1 of 2 branches missed.">        Objects.equals(currentNumberOfWalkers, that.currentNumberOfWalkers);</span>
+  }
+
+  @Override
+  public int hashCode() {
+<span class="fc" id="L108">    return Objects.hash(currentNumberOfCrawlers, currentNumberOfWalkers);</span>
+  }
+
+  @Override
+  public String toString() {
+<span class="fc" id="L113">    return &quot;infant{&quot; +</span>
+        &quot;, name=&quot; + name +
+        &quot;, coteacher=&quot; + coteacher +
+        &quot;, classroom='&quot; + classroom + '\'' +
+        &quot;, currentNumberOfChildren=&quot; + currentNumberOfChildren +
+        &quot;, maximumNumberOfChildren=&quot; + maximumNumberOfChildren +
+        &quot;, vacationStatus=&quot; + vacationStatus +
+        &quot;, currentNumberOfCrawlers=&quot; + currentNumberOfCrawlers +
+        &quot;, currentNumberOfWalkers=&quot; + currentNumberOfWalkers +
+        '}';
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
