@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.11.2">
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/newAssignment 6/src/main/java/edu/neu/ccs/cs5004/StockItem.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/newAssignment 6/src/main/java/edu/neu/ccs/cs5004/Inventory.java">
+<error line="7" severity="warning" message="Line is longer than 100 characters (found 101)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/newAssignment 6/src/main/java/edu/neu/ccs/cs5004/Products.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/newAssignment 6/src/main/java/edu/neu/ccs/cs5004/exceptions/AgeRestrictionException.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/newAssignment 6/src/main/java/edu/neu/ccs/cs5004/grocery/Beer.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/newAssignment 6/src/main/java/edu/neu/ccs/cs5004/grocery/Cheese.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/newAssignment 6/src/main/java/edu/neu/ccs/cs5004/grocery/Grocery.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/newAssignment 6/src/main/java/edu/neu/ccs/cs5004/grocery/Salmon.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/newAssignment 6/src/main/java/edu/neu/ccs/cs5004/ProcessOrder.java">
+<error line="6" severity="warning" message="&apos;java.util.ArrayList&apos; should be separated from previous import group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="33" severity="warning" message="Line is longer than 100 characters (found 101)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="34" severity="warning" message="Line is longer than 100 characters (found 102)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="74" severity="warning" message="Line is longer than 100 characters (found 103)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/newAssignment 6/src/main/java/edu/neu/ccs/cs5004/SubstitutionSystem.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/newAssignment 6/src/main/java/edu/neu/ccs/cs5004/household/PaperTowels.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/newAssignment 6/src/main/java/edu/neu/ccs/cs5004/household/Shampoo.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/newAssignment 6/src/main/java/edu/neu/ccs/cs5004/household/Household.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/newAssignment 6/src/main/java/edu/neu/ccs/cs5004/customer/Customer.java">
+</file>
+<file name="/Users/jonahgrier/Desktop/Student_repo_Jonah_Grier/Homework/newAssignment 6/src/main/java/edu/neu/ccs/cs5004/customer/ShoppingCart.java">
+<error line="6" severity="warning" message="&apos;java.util.HashMap&apos; should be separated from previous import group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="33" severity="warning" message="Comment has incorrect indentation level 4, expected is 6, indentation should be the same level as line 34." source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="34" severity="warning" message="&apos;if&apos; have incorrect indentation level 6, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="35" severity="warning" message="&apos;if&apos; child have incorrect indentation level 8, expected level should be 6." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="36" severity="warning" message="&apos;if rcurly&apos; have incorrect indentation level 6, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="37" severity="warning" message="&apos;else&apos; child have incorrect indentation level 8, expected level should be 6." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="37" severity="warning" message="&apos;member def type&apos; have incorrect indentation level 8, expected level should be 6." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="38" severity="warning" message="&apos;else&apos; child have incorrect indentation level 8, expected level should be 6." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="39" severity="warning" message="&apos;else rcurly&apos; have incorrect indentation level 6, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="40" severity="warning" message="&apos;method def rcurly&apos; have incorrect indentation level 4, expected level should be 2." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="53" severity="warning" message="Comment has incorrect indentation level 4, expected is 6, indentation should be the same level as line 54." source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="54" severity="warning" message="&apos;if&apos; have incorrect indentation level 6, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="55" severity="warning" message="&apos;if&apos; child have incorrect indentation level 8, expected level should be 6." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="56" severity="warning" message="&apos;if rcurly&apos; have incorrect indentation level 6, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="57" severity="warning" message="&apos;else&apos; child have incorrect indentation level 8, expected level should be 6." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="57" severity="warning" message="&apos;member def type&apos; have incorrect indentation level 8, expected level should be 6." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="58" severity="warning" message="&apos;else&apos; child have incorrect indentation level 8, expected level should be 6." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="59" severity="warning" message="&apos;else rcurly&apos; have incorrect indentation level 6, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="60" severity="warning" message="&apos;method def rcurly&apos; have incorrect indentation level 4, expected level should be 2." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="75" column="87" severity="warning" message="&apos;+&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+<error line="95" column="87" severity="warning" message="&apos;+&apos; should be on a new line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+</file>
+</checkstyle>

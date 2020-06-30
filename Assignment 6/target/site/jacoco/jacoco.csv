@@ -1,0 +1,16 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Assignment6,edu.neu.ccs.cs5004.customer,ShoppingCart,88,48,6,2,14,15,6,7,2,7
+Assignment6,edu.neu.ccs.cs5004.customer,Customer,0,21,0,0,0,8,0,4,0,4
+Assignment6,edu.neu.ccs.cs5004.exceptions,AgeRestrictionException,0,4,0,0,0,2,0,1,0,1
+Assignment6,edu.neu.ccs.cs5004.grocery,Beer,0,29,0,2,0,7,0,4,0,3
+Assignment6,edu.neu.ccs.cs5004.grocery,Cheese,0,8,0,0,0,2,0,1,0,1
+Assignment6,edu.neu.ccs.cs5004.grocery,Salmon,0,8,0,0,0,2,0,1,0,1
+Assignment6,edu.neu.ccs.cs5004.grocery,Grocery,0,13,0,0,0,4,0,2,0,2
+Assignment6,edu.neu.ccs.cs5004.household,PaperTowels,0,8,0,0,0,2,0,1,0,1
+Assignment6,edu.neu.ccs.cs5004.household,Shampoo,0,8,0,0,0,2,0,1,0,1
+Assignment6,edu.neu.ccs.cs5004.household,Household,0,13,0,0,0,4,0,2,0,2
+Assignment6,edu.neu.ccs.cs5004,ProcessOrder,101,0,10,0,20,0,10,0,5,0
+Assignment6,edu.neu.ccs.cs5004,StockItem,0,73,2,4,0,13,2,8,0,7
+Assignment6,edu.neu.ccs.cs5004,Inventory,0,128,0,4,0,25,0,6,0,4
+Assignment6,edu.neu.ccs.cs5004,SubstitutionSystem,6,0,0,0,3,0,1,0,1,0
+Assignment6,edu.neu.ccs.cs5004,Products,0,27,0,0,0,10,0,5,0,5

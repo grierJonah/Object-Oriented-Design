@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6d060d5-2923-4159-b570-0f27d5b0cbf1" name="Default Changelist" comment="" />
+    <list default="true" id="e6d060d5-2923-4159-b570-0f27d5b0cbf1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Labs/Lab9/src/main/java/edu/neu/ccs/cs5004/problem2/TrendingTopics.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Labs/Lab9/src/main/java/edu/neu/ccs/cs5004/problem2/TrendingTopics.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,7 +27,65 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/neu/ccs/cs5004/customer/ShoppingCart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1590">
+              <caret line="106" column="34" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#548#549#0" expanded="true" />
+                <element signature="e#587#588#0" expanded="true" />
+                <element signature="e#4289#4290#0" expanded="true" />
+                <element signature="e#4460#4461#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/edu/neu/ccs/cs5004/customer/ShoppingCartTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/neu/ccs/cs5004/customer/Customer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="36" lean-forward="true" selection-start-column="36" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/neu/ccs/cs5004/ProcessOrder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="805">
+              <caret line="90" column="38" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2935#2936#0" expanded="true" />
+                <element signature="e#2962#2963#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/edu/neu/ccs/cs5004/ProcessOrderTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -104,14 +164,98 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Assignment6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="newAssignment 6" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="newAssignment 6" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="newAssignment 6" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="newAssignment 6" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="newAssignment 6" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cs5004" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="newAssignment 6" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cs5004" type="462c0819:PsiDirectoryNode" />
+              <item name="customer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="newAssignment 6" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="newAssignment 6" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="newAssignment 6" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cs5004" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="newAssignment 6" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cs5004" type="462c0819:PsiDirectoryNode" />
+              <item name="customer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="newAssignment 6" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cs5004" type="462c0819:PsiDirectoryNode" />
+              <item name="grocery" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564813617920" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564807423821" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -252,7 +396,7 @@
       <workItem from="1563893893650" duration="19687000" />
       <workItem from="1564001275096" duration="4682000" />
       <workItem from="1564152067453" duration="4424000" />
-      <workItem from="1564795109950" duration="8484000" />
+      <workItem from="1564795109950" duration="8311000" />
     </task>
     <servers />
   </component>
@@ -289,12 +433,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37277000" />
+    <option name="totallyTimeSpent" value="37104000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26171243" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26171243" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -303,7 +448,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329927" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.329927" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329927" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

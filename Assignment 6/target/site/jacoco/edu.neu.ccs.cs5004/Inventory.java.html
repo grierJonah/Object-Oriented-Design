@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Inventory.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assignment6</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004</a> &gt; <span class="el_source">Inventory.java</span></div><h1>Inventory.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004;
+
+
+/**
+ * An inventory system that keeps track of a GroceryStock, and a HouseholdStock. These two stocks
+ * keep track of all the products that are revolving in and out of the SuperMarket's system. It also
+ * helps separate the grocery items from the household items by using two different HashMaps. Lastly,
+ * the Inventory class gives the SuperMarket a cleaner and more organized way of accessing total
+ * inventory levels as well as adding new items.
+ */
+public class Inventory {
+
+  private StockItem groceryStock;
+  private StockItem householdStock;
+
+  /**
+   * Constructs a new Inventory.
+   */
+<span class="fc" id="L19">  public Inventory() {</span>
+<span class="fc" id="L20">    groceryStock = new StockItem();</span>
+<span class="fc" id="L21">    householdStock = new StockItem();</span>
+<span class="fc" id="L22">  }</span>
+
+  /**
+   * Method allows a SuperMarket to add a new product into the groceryStock.
+   *
+   * @param groceryProduct the new product being added to the groceryStock
+   * @param quantity the quantity to add alongside the product
+   */
+  public void addGroceryItem(Products groceryProduct, Integer quantity) {
+<span class="fc" id="L31">    groceryStock.addToStock(groceryProduct, quantity);</span>
+<span class="fc" id="L32">  }</span>
+
+  /**
+   * Method allows a SuperMarket to add a new product into the householdStock.
+   *
+   * @param houseHoldProduct the new product being added to the householdStock
+   * @param quantity the quantity to add alongside the product
+   */
+  public void addHouseholdItem(Products houseHoldProduct, Integer quantity) {
+<span class="fc" id="L41">    householdStock.addToStock(houseHoldProduct, quantity);</span>
+<span class="fc" id="L42">  }</span>
+
+  /**
+   * Gets the total inventory price that the SuperMarket currently has. Uses helper functions to
+   * iterate through both the grocery and household products.
+   *
+   * @return the total inventory price, represented as a Double
+   */
+  public Double getTotalRetailValue() {
+<span class="fc" id="L51">    Integer groceryQuantity = 0;</span>
+<span class="fc" id="L52">    Integer householdQuantity = 0;</span>
+<span class="fc" id="L53">    Double groceryTotal = 0.0;</span>
+<span class="fc" id="L54">    Double householdTotal = 0.0;</span>
+<span class="fc" id="L55">    Double currentGroceryRetailValue = 0.0;</span>
+<span class="fc" id="L56">    Double currentHouseholdRetailValue = 0.0;</span>
+
+<span class="fc bfc" id="L58" title="All 2 branches covered.">    for (Products product : groceryStock.getKeys()) {</span>
+      // Gets the value (quantity associated with product in HashMap)
+<span class="fc" id="L60">      groceryQuantity += groceryStock.getQuantity(product);</span>
+<span class="fc" id="L61">      currentGroceryRetailValue += product.getPrice();</span>
+<span class="fc" id="L62">      groceryTotal = currentGroceryRetailValue * groceryQuantity;</span>
+<span class="fc" id="L63">    }</span>
+
+<span class="fc bfc" id="L65" title="All 2 branches covered.">    for (Products product : householdStock.getKeys()) {</span>
+      // Gets the value (quantity associated with product in HashMap)
+<span class="fc" id="L67">      householdQuantity += householdStock.getQuantity(product);</span>
+<span class="fc" id="L68">      currentHouseholdRetailValue += product.getPrice();</span>
+<span class="fc" id="L69">      householdTotal = currentHouseholdRetailValue * householdQuantity;</span>
+<span class="fc" id="L70">    }</span>
+
+<span class="fc" id="L72">    return groceryTotal + householdTotal;</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

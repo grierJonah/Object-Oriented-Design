@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Shampoo.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assignment6</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.household</a> &gt; <span class="el_source">Shampoo.java</span></div><h1>Shampoo.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.household;
+
+/**
+ * A class representing a Household product: Shampoo.
+ */
+public class Shampoo extends Household {
+
+  /**
+   * Constructs a Shampoo object given the parameters.
+   *
+   * @param manufacturerName the name of the manufacturer
+   * @param productName the name of the product
+   * @param price the cost of the product, represented as a Double
+   * @param minimumAge the required age to purchase the product
+   * @param units the amount of items per package (i.e. 2 Shampoo products per purchase)
+   */
+  public Shampoo(String manufacturerName, String productName,
+      Double price, Integer minimumAge, Integer units) {
+<span class="fc" id="L19">    super(manufacturerName, productName, price, minimumAge, units);</span>
+<span class="fc" id="L20">  }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

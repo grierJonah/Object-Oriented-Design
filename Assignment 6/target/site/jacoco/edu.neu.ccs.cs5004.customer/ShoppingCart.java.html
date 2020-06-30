@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ShoppingCart.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assignment6</a> &gt; <a href="index.source.html" class="el_package">edu.neu.ccs.cs5004.customer</a> &gt; <span class="el_source">ShoppingCart.java</span></div><h1>ShoppingCart.java</h1><pre class="source lang-java linenums">package edu.neu.ccs.cs5004.customer;
+
+import edu.neu.ccs.cs5004.Products;
+import edu.neu.ccs.cs5004.StockItem;
+import edu.neu.ccs.cs5004.SubstitutionSystem;
+import java.util.HashMap;
+
+/**
+ * A ShoppingCart class.
+ */
+public class ShoppingCart {
+
+<span class="fc" id="L13">  private static final Integer DEFAULT_BUYING_QUANTITY = 1;</span>
+<span class="fc" id="L14">  private static final Integer ONE_AVAILABLE_IN_STOCK = 1;</span>
+
+  private StockItem stockItem;
+  private static HashMap&lt;Products, Integer&gt; shoppingCart;
+  private SubstitutionSystem substitutionSystem;
+
+
+<span class="fc" id="L21">  public ShoppingCart() {</span>
+<span class="fc" id="L22">    shoppingCart = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L23">  }</span>
+
+  /**
+   * Allows a product to be added to the shopping cart. Checks to make sure that the product is not
+   * already in the shopping cart. If it is, gets the products current quantity then adds +1 to it
+   * to increase the shopping cart quantity of that product.
+   *
+   * @param product the product that is being added to the shopping cart
+   */
+  public void addProductToShoppingCart(Products product) {
+    //if (checkAvailability(product)) {
+<span class="pc bpc" id="L34" title="1 of 2 branches missed.">      if (!shoppingCart.containsKey(product)) {</span>
+<span class="fc" id="L35">        shoppingCart.put(product, DEFAULT_BUYING_QUANTITY);</span>
+      } else {
+<span class="nc" id="L37">        Integer currentQuantity = shoppingCart.get(product);</span>
+<span class="nc" id="L38">        shoppingCart.put(product, DEFAULT_BUYING_QUANTITY + currentQuantity);</span>
+      }
+<span class="fc" id="L40">    }</span>
+  //}
+
+  /**
+   * Overloaded method that allows a shopper to specify the quantity of products they want to
+   * purchase. Also checks if the product they are looking to buy is currently in the shopping cart.
+   * If it is, then it gets the current quantity and adds it to the quantity they are looking to
+   * purchase.
+   *
+   * @param product the product the customer wants to add to their shopping cart
+   * @param quantity the quantity of the product they want to buy
+   */
+  public void addProductToShoppingCart(Products product, Integer quantity) {
+    //if (checkAvailability(product, quantity)) {
+<span class="pc bpc" id="L54" title="1 of 2 branches missed.">      if (!shoppingCart.containsKey(product)) {</span>
+<span class="fc" id="L55">        shoppingCart.put(product, quantity);</span>
+      } else {
+<span class="nc" id="L57">        Integer currentQuantity = shoppingCart.get(product);</span>
+<span class="nc" id="L58">        shoppingCart.put(product, currentQuantity + quantity);</span>
+      }
+<span class="fc" id="L60">    }</span>
+  //}
+
+  /**
+   * Checks if the current inventory has enough product left to sell the requested quantity. If it
+   * does not, the seller will be greeted with a message.
+   *
+   * @param product the product requested to purchase
+   * @param quantity the quantity the customer wants to purchase
+   * @return a true or false depending on availability
+   */
+  public Boolean checkAvailability(Products product, Integer quantity) {
+<span class="nc bnc" id="L72" title="All 2 branches missed.">    if (stockItem.getQuantity(product) &gt;= quantity) {</span>
+<span class="nc" id="L73">      return true;</span>
+    } else {
+<span class="nc" id="L75">      System.out.println(&quot;Cannot add amount specified to cart! Currently only have: &quot; +</span>
+<span class="nc" id="L76">          stockItem.getQuantity(product) + &quot; left in stock!&quot;);</span>
+<span class="nc" id="L77">      return false;</span>
+    }
+  }
+
+  /**
+   * Checks if the current inventory has enough product left to sell at least one. Since the buyer
+   * has the option to not specify an amount they want to purchase, this method helps check that
+   * there is at least one of the current product. If the buyer does not add a quantity they want
+   * by default they are requesting for only 1. If there is not at least 1 available, the buyer is
+   * greeted with a message.
+   *
+   * @param product the product requested to purchase
+   * @return a true or false depending on availability
+   */
+  private Boolean checkAvailability(Products product) {
+<span class="nc bnc" id="L92" title="All 2 branches missed.">    if (stockItem.getQuantity(product) &gt;= ONE_AVAILABLE_IN_STOCK) {</span>
+<span class="nc" id="L93">      return true;</span>
+    } else {
+<span class="nc" id="L95">      System.out.println(&quot;Cannot add amount specified to cart! Currently only have: &quot; +</span>
+<span class="nc" id="L96">          stockItem.getQuantity(product) + &quot; left in stock!&quot;);</span>
+<span class="nc" id="L97">      return false;</span>
+    }
+  }
+
+  /**
+   * Checks the current availability of the specific grocery item.
+   *
+   * @param product the product to check for current inventory for
+   * @return the quantity of the product in the shopping cart
+   */
+  public Integer checkCurrentAvailabilityOfGroceryItems(Products product) {
+<span class="fc" id="L108">    return shoppingCart.get(product);</span>
+  }
+
+  /**
+   * Removes an item from the cart.
+   *
+   * @param groceryProduct a specific product to remove from the cart
+   */
+  public void removeItemFromCart(Products groceryProduct) {
+<span class="fc" id="L117">    shoppingCart.remove(groceryProduct);</span>
+<span class="fc" id="L118">  }</span>
+
+  /**
+   * Gets the current Shopping Cart.
+   *
+   * @return the shopping cart
+   */
+  public HashMap&lt;Products, Integer&gt; getShoppingCart() {
+<span class="fc" id="L126">    return shoppingCart;</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
